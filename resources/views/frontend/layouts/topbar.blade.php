@@ -13,13 +13,13 @@
             </ul>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #222222;"><i class="fas fa-globe-americas"></i>
-                    English
+                    {{config("app_langs.".app()->getLocale())}}
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">বাংলা</a>
-                    <a class="dropdown-item" href="#">portuguese</a>
+                    @foreach(config('app_langs') as $key => $lang)
+                    <a class="dropdown-item" href="{{route('home',['locale' => $key])}}">{{$lang}}</a>
+                    @endforeach
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">German</a>
                 </div>
             </li>
             <li class="nav-item">
