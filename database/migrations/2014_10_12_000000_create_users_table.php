@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('phone')->nullable();
             $table->string('address')->nullable();
-            $table->enum('status', ['active', 'in-active', 'pending'])->default('active');
+            $table->enum('status', ['active', 'inactive', 'pending'])->default('active');
             $table->rememberToken();
             $table->timestamps();
         });

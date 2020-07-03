@@ -19,7 +19,7 @@ class CreateQuestionAnswersTable extends Migration
             $table->unsignedBigInteger('question_id');
             $table->unsignedBigInteger('answer_id');
             $table->unsignedBigInteger('assigned_by');
-            $table->dateTime('date_line')->nullable();
+            $table->dateTime('deadline')->nullable();
             $table->timestamps();
         });
     }

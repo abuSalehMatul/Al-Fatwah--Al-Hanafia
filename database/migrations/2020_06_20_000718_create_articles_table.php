@@ -17,10 +17,11 @@ class CreateArticlesTable extends Migration
             $table->id();
             $table->unsignedBigInteger('category_id');
             $table->string('title');
+            $table->string('slug');
             $table->text('body');
             $table->string('image')->nullable();
-            $table->string('language');
-            $table->enum('status', ['active', 'in-active', 'pending', 'denied', 'in-revision']);
+            $table->enum('language', ['en', 'bn', 'ar'])->default('en');
+            $table->enum('status', ['active', 'inactive', 'pending', 'denied', 'in-revision']);
             $table->timestamps();
         });
     }
