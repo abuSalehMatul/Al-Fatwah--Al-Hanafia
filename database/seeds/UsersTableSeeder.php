@@ -17,7 +17,7 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         //
-    	$app_name = Str::slug(env('APP_NAME', "Al Fatwah"), '_');
+    	$app_name = Str::slug(env('APP_NAME', "Al Fatwah"), '');
         foreach (config('enums.roles') as $role) {
         	$user = User::create([
         		'name' => $role,
