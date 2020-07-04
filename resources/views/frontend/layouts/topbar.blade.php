@@ -24,11 +24,11 @@
             </li>
             @guest
                 <li class="nav-item">
-                    <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModal"><i class="far fa-user-circle"></i> Login</a>
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModal"><i class="far fa-user-circle"></i> {{ __('Login')}}</a>
                 </li>
                 @if (Route::has('register'))
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        <a class="nav-link" href="{{ route('register') }}"><i class="fa fa-user-plus"></i> {{ __('Register') }}</a>
                     </li>
                 @endif
             @else
@@ -38,9 +38,7 @@
                     </a>
 
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ route('logout') }}"
-                           onclick="event.preventDefault();
-                                         document.getElementById('logout-form').submit();">
+                        <a id="logout-btn" class="dropdown-item" href="#" onclick="logout();">
                             {{ __('Logout') }}
                         </a>
 
