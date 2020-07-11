@@ -19,8 +19,8 @@ class QuestionAnswersSeeder extends Seeder
 			[
 				'title' => 'The abhorrent nature of shirk',
 				'slug' => 'the-abhorrent-nature-of-shirk',
-				'body' => 'What is meant by the words of Shaykh al-Islam Ibn Taymiyah (may Allah have mercy on him): The description of being a mushrik [one who associates others with Allah] is valid and is confirmed even if the message has not reached him, because he is associating others with his Lord and regarding false gods as being equal to Allah?',
-				'user_id' => 1,
+				'description' => 'What is meant by the words of Shaykh al-Islam Ibn Taymiyah (may Allah have mercy on him): The description of being a mushrik [one who associates others with Allah] is valid and is confirmed even if the message has not reached him, because he is associating others with his Lord and regarding false gods as being equal to Allah?',
+				'created_by' => 1,
 				'status' => 'active',
 				'category_id' => 1,
 				'language' => 'en',
@@ -28,8 +28,8 @@ class QuestionAnswersSeeder extends Seeder
 			[
 				'title' => 'The nature of shirk',
 				'slug' => 'the-nature-of-shirk',
-				'body' => 'What is meant by the words of Shaykh al-Islam Ibn Taymiyah (may Allah have mercy on him): The description of being a mushrik [one who associates others with Allah] is valid and is confirmed even if the message has not reached him, because he is associating others with his Lord and regarding false gods as being equal to Allah?',
-				'user_id' => 1,
+				'description' => 'What is meant by the words of Shaykh al-Islam Ibn Taymiyah (may Allah have mercy on him): The description of being a mushrik [one who associates others with Allah] is valid and is confirmed even if the message has not reached him, because he is associating others with his Lord and regarding false gods as being equal to Allah?',
+				'created_by' => 1,
 				'status' => 'active',
 				'category_id' => 1,
 				'language' => 'en',
@@ -39,20 +39,20 @@ class QuestionAnswersSeeder extends Seeder
         	[
         		'batch_id' => 1,
         		'language' => 'en',
-        		'body' => 'Praise be to Allah.
+        		'description' => 'Praise be to Allah.
         				What Shaykh al-Islam Ibn Taymiyah (may Allah have mercy on him) meant by these words was to highlight that shirk is wrong and blameworthy, and that the one who commits shirk is to be described as a mushrik; his action is abhorrent and blameworthy, regardless of whether or not proof with evidence has been established against the mushrik, because shirk is abhorrent in all cases, before the sending of the message and afterwards.',
         		'category_id' => 1
         	],
         	[
         		'batch_id' => 1,
         		'language' => 'ar',
-        		'body' => ' الأول : بيان ذم الشرك وقبحه وأنه شر كله ، وهذا وصف ذاتي له ، لا ينفك عنه ، سواء كان قبل قيام الحجة بإرسال الرسول وإنزال الكتاب ، أو كان بعد ذلك ، والمشرك : هو من وقع في هذا الأمر ، واتصف به ؛ فعدم قيام الحجة لا يغير الأسماء الشرعية . ',
+        		'description' => ' الأول : بيان ذم الشرك وقبحه وأنه شر كله ، وهذا وصف ذاتي له ، لا ينفك عنه ، سواء كان قبل قيام الحجة بإرسال الرسول وإنزال الكتاب ، أو كان بعد ذلك ، والمشرك : هو من وقع في هذا الأمر ، واتصف به ؛ فعدم قيام الحجة لا يغير الأسماء الشرعية . ',
         		'category_id' => 1
         	],
         	[
         		'batch_id' => 1,
         		'language' => 'bn',
-        		'body' => ' দুঃখিত, আপনি যে পেইজটি দেখতে চাচ্ছেন সেটা নেই ',
+        		'description' => ' দুঃখিত, আপনি যে পেইজটি দেখতে চাচ্ছেন সেটা নেই ',
         		'category_id' => 1
         	],
 		];

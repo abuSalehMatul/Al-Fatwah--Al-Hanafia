@@ -17,7 +17,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     @foreach(config('app_langs') as $key => $lang)
-                    <a class="dropdown-item" href="{{route('home',['locale' => $key])}}">{{$lang}}</a>
+                    <a class="dropdown-item" href="{{route(request()->route()->getName(),['locale' => $key])}}">{{$lang}}</a>
                     @endforeach
                     <div class="dropdown-divider"></div>
                 </div>

@@ -20,6 +20,11 @@ class CreateQuestionAnswersTable extends Migration
             $table->unsignedBigInteger('answer_id');
             $table->unsignedBigInteger('assigned_by');
             $table->dateTime('deadline')->nullable();
+            
+            $table->unsignedBigInteger('created_by')->nullable();
+            $table->unsignedBigInteger('updated_by')->nullable();
+            $table->unsignedBigInteger('deleted_by')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

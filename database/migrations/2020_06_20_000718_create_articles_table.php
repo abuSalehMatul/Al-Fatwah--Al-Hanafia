@@ -22,6 +22,11 @@ class CreateArticlesTable extends Migration
             $table->string('image')->nullable();
             $table->enum('language', ['en', 'bn', 'ar'])->default('en');
             $table->enum('status', ['active', 'inactive', 'pending', 'denied', 'in-revision']);
+            
+            $table->unsignedBigInteger('created_by')->nullable();
+            $table->unsignedBigInteger('updated_by')->nullable();
+            $table->unsignedBigInteger('deleted_by')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

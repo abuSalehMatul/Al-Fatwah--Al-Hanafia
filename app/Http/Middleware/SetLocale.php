@@ -21,6 +21,8 @@ class SetLocale
             'locale' => $request->segment(1) ?? config('app.locale'),
         ]);
         app()->setLocale($request->segment(1));
+        
+        view()->share('APP_LOCALE', app()->getLocale());
 
         return $next($request);
     }

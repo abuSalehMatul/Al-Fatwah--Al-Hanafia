@@ -23,6 +23,12 @@ class CreateUsersTable extends Migration
             $table->string('address')->nullable();
             $table->enum('status', ['active', 'inactive', 'pending'])->default('active');
             $table->rememberToken();
+
+            $table->integer('created_by')->nullable();
+            $table->integer('updated_by')->nullable();
+            $table->integer('deleted_by')->nullable();
+            $table->softDeletes();
+            
             $table->timestamps();
         });
     }

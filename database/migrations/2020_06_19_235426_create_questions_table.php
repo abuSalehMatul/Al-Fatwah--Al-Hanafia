@@ -17,8 +17,7 @@ class CreateQuestionsTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('slug');
-            $table->text('body');
-            $table->unsignedBigInteger('user_id');
+            $table->text('description');
             $table->enum('status', ['active', 'inactive', 'pending', 'denied', 'in-revision'])->default('active');
             $table->integer('is_answered')->default(0);
             $table->unsignedBigInteger('category_id');
@@ -26,6 +25,11 @@ class CreateQuestionsTable extends Migration
            // $table->unsignedBigInteger('assign_to')->nullable();
             $table->string('tag')->nullable();
             $table->string('reference')->nullable();
+            
+            $table->unsignedBigInteger('created_by')->nullable();
+            $table->unsignedBigInteger('updated_by')->nullable();
+            $table->unsignedBigInteger('deleted_by')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -19,6 +19,11 @@ class CreateCategoriesTable extends Migration
             $table->string('name_en');
             $table->string('name_ar');
             $table->unsignedBigInteger('parent_id')->nullable();
+            
+            $table->unsignedBigInteger('created_by')->nullable();
+            $table->unsignedBigInteger('updated_by')->nullable();
+            $table->unsignedBigInteger('deleted_by')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
