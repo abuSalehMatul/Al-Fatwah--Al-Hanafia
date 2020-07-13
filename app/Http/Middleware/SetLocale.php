@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 
 use Illuminate\Contracts\Routing\UrlGenerator;
+use Illuminate\Support\Facades\URL;
 
 class SetLocale
 {
@@ -17,12 +18,17 @@ class SetLocale
 
     public function handle($request, Closure $next)
     {
-        $this->url->defaults([
-            'locale' => $request->segment(1) ?? config('app.locale'),
-        ]);
-        app()->setLocale($request->segment(1));
+        // $this->url->defaults([
+        //     'locale' => ,
+        // ]);
+        $APP_LOCALE = $request->segment(1) ?? config('app.locale');
+
+        app()->setLocale($APP_LOCALE);
+
+        $this->url->defaults(['locale' => $APP_LOCALE]);
+
         
-        view()->share('APP_LOCALE', app()->getLocale());
+        view()->share('APP_LOCALE', $APP_LOCALE);
 
         return $next($request);
     }

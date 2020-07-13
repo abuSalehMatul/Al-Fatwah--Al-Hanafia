@@ -15,12 +15,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'HomeController@redirectToHome');
 
 //
-Auth::routes();
 Route::group([
 	'prefix' => '{locale}', 
 	'where' => ['locale' => '[a-zA-Z]{2}'],
 	'middleware' => 'setlocale'], function() {
     //
+    Auth::routes();
 
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('/home', 'HomeController@index');
