@@ -19,10 +19,16 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('phone');
-            $table->string('address');
-            $table->enum('status', ['active', 'in-active', 'pending'])->default('active');
+            $table->string('phone')->nullable();
+            $table->string('address')->nullable();
+            $table->enum('status', ['active', 'inactive', 'pending'])->default('active');
             $table->rememberToken();
+
+            $table->integer('created_by')->nullable();
+            $table->integer('updated_by')->nullable();
+            $table->integer('deleted_by')->nullable();
+            $table->softDeletes();
+            
             $table->timestamps();
         });
     }

@@ -10,4 +10,9 @@ class HomeController extends Controller
     {
         return view('frontend.home');
     }
+
+    public function redirectToHome()
+    {
+		return redirect()->route('home', ['locale' => config('app.locale')]);
+    }
 }

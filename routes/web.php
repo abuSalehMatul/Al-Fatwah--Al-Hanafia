@@ -12,11 +12,27 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Auth::routes();
-Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@redirectToHome');
+
+//
+Route::group([
+	'prefix' => '{locale}', 
+	'where' => ['locale' => '[a-zA-Z]{2}'],
+	'middleware' => 'setlocale'], function() {
+    //
+    Auth::routes();
+
+    Route::get('/', 'HomeController@index')->name('home');
+    Route::get('/home', 'HomeController@index');
+
+    Route::group(['middleware' => 'auth', 'namespace' => 'Frontend'], function() {
+        //
+        Route::resource('questions', 'QuestionsController');
+    });
 
 
-Route::prefix('admin')->group(function(){
-    Route::get('/', 'AdminController@index');
+    Route::prefix('admin')->group(function(){
+        Route::get('/', 'AdminController@index');
+    });
 });
 
