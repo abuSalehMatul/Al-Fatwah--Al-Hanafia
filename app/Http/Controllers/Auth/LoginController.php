@@ -37,4 +37,13 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    // override default methods
+    public function showLoginForm()
+    {
+        if(request()->ajax())
+            return view('auth._login');
+        else
+            return view('auth.login');
+    }
 }

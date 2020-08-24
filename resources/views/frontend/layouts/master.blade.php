@@ -30,6 +30,40 @@
     @yield('content')
     @include('frontend.layouts.footer')
     
+    <div class="modal fade" id="form_modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <form method="POST" action="" data-submit="ajax">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title"></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="row">
+                            <div class="col-md-4"></div>
+
+                            <div class="col-md-6 message_div">
+                            </div>
+
+                            <div class="col-md-12 form_div">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                            Close
+                        </button>
+                        <button class="btn btn-primary modal_form_submit_btn"></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <script src="{{ asset('js/app.js') }}" defer></script>
     
     <script>
@@ -67,6 +101,71 @@
         function logout(){
             document.getElementById('logout-form').submit();
         }
+    </script>
+
+    <script type="text/javascript">
+        $(function(){
+
+            $(document).on('click', '[data-action="form-modal"]', async function(e){
+                e.preventDefault();
+                let form_modal = $('#form_modal');
+                form_modal.find('form').attr('action', $(this).attr('data-submit_url'));
+                form_modal.find('.modal-header').text($(this).attr('data-modal-title'));
+                form_modal.find('.modal_form_submit_btn').text($(this).attr('data-submit_btn'));
+
+                form_modal.find('form').trigger('reset');
+
+                if($(this).attr('data-form') == "ajax"){
+                    await $.get($(this).attr('data-form_url'), function(data) {
+                        form_modal.find('.modal-body .message_div').html('');
+                        form_modal.find('.modal-body .form_div').html(data);
+                    }).fail(function(errors) {
+                        form_modal.find('.modal-body .message_div').html(errors);
+                    });
+                }
+
+                form_modal.modal('show');
+
+                window.shown_modal = form_modal;
+
+            });
+
+            $(document).on('submit', "form[data-submit='ajax']",  function(e){
+            e.preventDefault();
+            let form = $(this);
+
+            $.ajax({
+                url: $(this).attr('action'),
+                data: new FormData(this),
+                type: "POST",
+                dataType: 'json',
+                contentType: false,
+                cache: false,
+                processData:false,
+                success:  function (data) {
+                    console.log(data);
+                    if(!!data && data.success){
+                        form.find('.message_div').html(data.success);
+                    }
+                    if(!!data && data.redirectTo){
+                        window.location = data.redirectTo;
+                    }else{
+                        window.location.reload();
+                    }
+                },
+                error: function (errors) {
+                    form.find('.message_div').html('');
+                    if(errors.responseJSON.errors){
+                        $.each(errors.responseJSON.errors, function(error){
+                            form.find('.message_div').append(
+                                `<div class="text-danger">${errors.responseJSON.errors[error][0]}</div>`);
+                        });
+                    }
+                }
+            });              
+
+            });
+        })
     </script>
     @yield('js')
 </body>
