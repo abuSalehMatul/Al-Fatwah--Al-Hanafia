@@ -138,12 +138,11 @@
                 url: $(this).attr('action'),
                 data: new FormData(this),
                 type: "POST",
-                dataType: 'json',
+                dataType: 'text',
                 contentType: false,
                 cache: false,
                 processData:false,
                 success:  function (data) {
-                    console.log(data);
                     if(!!data && data.success){
                         form.find('.message_div').html(data.success);
                     }
@@ -155,10 +154,16 @@
                 },
                 error: function (errors) {
                     form.find('.message_div').html('');
-                    if(errors.responseJSON.errors){
-                        $.each(errors.responseJSON.errors, function(error){
-                            form.find('.message_div').append(
-                                `<div class="text-danger">${errors.responseJSON.errors[error][0]}</div>`);
+                    if(!!errors.responseJSON.errors){
+                        $.each(errors.responseJSON.errors, function(key, message){
+                            form.find('.message_div').append(`
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                  ${message[0]}
+                                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                `);
                         });
                     }
                 }

@@ -28,7 +28,8 @@
                 </li>
                 @if (Route::has('register'))
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('register') }}"><i class="fa fa-user-plus"></i> {{ __('Register') }}</a>
+                        <a class="nav-link" href="#" data-action="form-modal" data-form="ajax" data-form_url="{{ route('register') }}" data-submit_url="{{ route('register') }}" data-submit_btn="{{ __('Register') }}" data-modal-title="{{ __('Please register to continue')}}"><i class="far fa-user-circle"></i>{{ __('Register') }}</a>
+
                     </li>
                 @endif
             @else

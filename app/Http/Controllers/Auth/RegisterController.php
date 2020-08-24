@@ -74,4 +74,13 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
+
+    // override method
+    public function showRegistrationForm()
+    {
+        if(request()->ajax())
+            return view('auth._register');
+        else
+            return view('auth.register');
+    }
 }
