@@ -23,6 +23,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //        
+        //
+        // here we are setting default parameters for routes. basically we're setting default route to Illuminate\Contracts\Routing\UrlGenerator class
+        app('url')->defaults(['locale' => config('app.locale')]);
     }
 }

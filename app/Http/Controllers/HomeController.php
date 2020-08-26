@@ -13,6 +13,6 @@ class HomeController extends Controller
 
     public function redirectToHome()
     {
-		return redirect()->route('home', ['locale' => config('app.locale')]);
+		return redirect()->route('home');
     }
 }
