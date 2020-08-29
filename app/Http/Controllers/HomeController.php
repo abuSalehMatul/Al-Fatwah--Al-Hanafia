@@ -23,6 +23,10 @@ class HomeController extends Controller
 
     public function questionView($id)
     {
-    	return $question = Question::Locale()->findOrFail($id);
+    	$question = Question::Locale()->findOrFail($id);
+    	// request()->route()->setParameter('locale', request()->route()->originalParameters()['locale']);
+    	// return request()->route()->parameters();
+        return view('frontend.questions.view', compact('question'));
+
     }
 }
