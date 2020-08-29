@@ -12,11 +12,17 @@ class HomeController extends Controller
     public function index()
     {
     	$latest_answered_question = Question::Locale()->LatestAnsweredQuestions()->take(3)->get();
-        return view('frontend.home', compact('latest_answered_question'));
+    	$selected_questions = Question::Locale()->Selected()->take(3)->get();
+        return view('frontend.home', compact('latest_answered_question', 'selected_questions'));
     }
 
     public function redirectToHome()
     {
 		return redirect()->route('home');
+    }
+
+    public function questionView($id)
+    {
+    	return $question = Question::Locale()->findOrFail($id);
     }
 }

@@ -13,7 +13,7 @@
             <h3 class="text-center">{{__('Sorry Nothing found')}}</h3>
             @else
               @foreach($latest_answered_question as $key => $question)
-              <a href="#">
+              <a href="{{route('question.view', $question->id)}}">
                 <div class="card">
                   <div class="card-body">
                     <span class="left-text">
@@ -36,35 +36,27 @@
         <div class="col-md-4 mb-4">
           <div class="selected_answer">
             <h4 class="text-center mb-4" style="font-size: 20px;">
-              Selected Questions
+              {{__('Selected Questions')}}
             </h4>
-            <a href="#">
-              <div class="card active">
-                <div class="card-body">
-                  <div class="left-text">
-                    <i class="far fa-bookmark"></i>
-                    <span>
-                      Combining three of the six days of Shawwaal with the
-                      Ayyaam al-Beed
-                    </span>
+            @if(empty($selected_questions) || count($selected_questions) == 0)
+            <h3 class="text-center">{{__('Sorry Nothing found')}}</h3>
+            @else
+              @foreach($selected_questions as $key => $question)
+              <a href="{{route('question.view', $question->id)}}">
+                <div class="card active">
+                  <div class="card-body">
+                    <div class="left-text">
+                      <i class="far fa-bookmark"></i>
+                      <span>
+                        {{$question->title}}
+                      </span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </a>
-            <a href="#">
-              <div class="card">
-                <div class="card-body">
-                  <div class="left-text">
-                    <i class="far fa-bookmark"></i>
-                    <span>
-                      Can a woman compare between more than one suitor before
-                      rejecting the first one?
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </a>
-            <a href="#" style="float: right; color: #ed174b; font-weight: 600;">See more....</a>
+              </a>
+              @endforeach
+              <a href="#" style="float: right; color: #ed174b; font-weight: 600;">See more....</a>
+            @endif
           </div>
         </div>
       </div>

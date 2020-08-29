@@ -24,6 +24,7 @@ Route::group([
 
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('/home', 'HomeController@index');
+    Route::get('/question/{id}', 'HomeController@questionView')->name('question.view');
 
     Route::group(['middleware' => 'auth', 'namespace' => 'Frontend'], function() {
         //

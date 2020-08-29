@@ -26,6 +26,11 @@ class Question extends Model
     {
         return $query->where('is_answered', 1);
     }
+    
+    public function scopeSelected($query)
+    {
+        return $query->where('selected', 1);
+    }
 
     public function scopeLocale($query)
     {

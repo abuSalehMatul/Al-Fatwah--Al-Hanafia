@@ -15,6 +15,8 @@ class SetLocale
         
         view()->share('APP_LOCALE', $APP_LOCALE);
 
+        $request->route()->forgetParameter('locale');
+
         return $next($request);
     }
 }
