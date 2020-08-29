@@ -13,7 +13,7 @@
                         <a class="nav-link" href="#">categories</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('questions.create')}}">Send a question</a>
+                        <a class="nav-link" href="{{route('questions.create')}}">{{__('Send a New Question')}}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">new Answers</a>

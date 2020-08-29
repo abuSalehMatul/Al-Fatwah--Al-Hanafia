@@ -9,6 +9,29 @@ class Question extends Model
     //
     protected $guarded = ['id'];
 
+    public function scopeLatestAnsweredQuestions($query)
+    {
+        return $query->
+                    Answered()->
+                    addSelect(['answered_at' => Answer::select('created_at')->
+                            whereColumn('answers.question_id', 'questions.id')->
+                            latest()->
+                            take(1)
+                        ])->
+                        withCasts(['answered_at' => 'datetime'])->
+                        orderByDesc('answered_at');
+    }
+
+    public function scopeAnswered($query)
+    {
+        return $query->where('is_answered', 1);
+    }
+
+    public function scopeLocale($query)
+    {
+        return $query->where('language', app()->getLocale());
+    }
+
     public function answers()
     {
     	return $this->hasMany('App\Answer');
