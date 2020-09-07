@@ -6,6 +6,7 @@ use Closure;
 
 use Illuminate\Contracts\Routing\UrlGenerator;
 use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\Session;
 
 class SetLocale
 {
@@ -29,6 +30,7 @@ class SetLocale
 
         
         view()->share('APP_LOCALE', $APP_LOCALE);
+        Session::put('APP_LOCALE', $APP_LOCALE);
 
         return $next($request);
     }

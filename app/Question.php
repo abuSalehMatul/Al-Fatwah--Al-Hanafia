@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Session;
 
 class Question extends Model
 {
@@ -12,6 +13,16 @@ class Question extends Model
     public function answers()
     {
     	return $this->hasMany('App\Answer');
+    }
+
+    public static function getByCategory($categoryId)
+    {
+        $locale = Session::get('APP_LOCALE');
+        return Question::where('status', 'active')
+        ->where('language', $locale)
+        ->where('category_id', $categoryId)
+        ->orderBy('created_at', 'DESC')
+        ->paginate(15);
     }
 
     public function answer_bn()

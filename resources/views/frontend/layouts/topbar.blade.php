@@ -12,12 +12,12 @@
                 </li>
             </ul>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-globe-americas"></i>
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownforlang" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-globe-americas"></i>
                     {{config("app_langs.".app()->getLocale())}}
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownforlang">
                     @foreach(config('app_langs') as $key => $lang)
-                    <a class="dropdown-item" href="{{route(request()->route()->getName(),['locale' => $key])}}">{{$lang}}</a>
+                    <a class="dropdown-item" href="{{url('/').'/'. $key}}">{{$lang}}</a>
                     @endforeach
                     <div class="dropdown-divider"></div>
                 </div>

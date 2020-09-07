@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Frontend;
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -10,6 +10,7 @@ use DB;
 use Auth;
 use App\Category;
 use App\Question;
+use Illuminate\Support\Facades\Session;
 
 class QuestionsController extends Controller
 {
@@ -21,6 +22,23 @@ class QuestionsController extends Controller
     public function index()
     {
         //
+    }
+
+    public function getAnswerByQuestion($lang, $questionId)
+    {
+        $fun = "answer_". $lang;
+        $questionWithAns = Question::findOrFail($questionId)->load($fun);
+        return view('frontend.questionAns')->with('questionAnswer', $questionWithAns);
+    }
+
+    public function getSelectedQuestion()
+    {
+        $locale = Session::get('APP_LOCALE');
+        return Question::where('is_selected', 1)
+        ->where('status', 'active')
+        ->where('language', $locale)
+        ->orderBy('created_at', 'DESC')
+        ->get();
     }
 
     /**
@@ -61,7 +79,7 @@ class QuestionsController extends Controller
             ]);
         }
 
-        return redirect()->back()->with([
+        return redirect('/')->with([
             'status' => 'success',
             'message' => "Your Question have been submitted successfully."
         ]);

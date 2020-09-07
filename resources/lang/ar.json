@@ -1,3 +1,10 @@
 {
-	"Send a New Question" : " أرسل سؤالاً  "
+	"Send a New Question" : " أرسل سؤالاً  ",
+	"Select a language" : "as",
+	"Question Title" : "Question Title",
+	"Category" : "Category",
+	"Language" : "Language", 
+	"Question Description" : "Question Description",
+	"Select Category" : "Select Category",
+	"Ask" : "Ask"
 }

@@ -9,21 +9,21 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">categories</a>
-                    </li>
+                    {{-- <li class="nav-item">
+                    <a class="nav-link" href="{{url('/'). '/'.app()->getLocale().'/category'}}">Categories</a>
+                    </li> --}}
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('questions.create')}}">Send a question</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">new Answers</a>
+                        <a class="nav-link" href="#">New Answers</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Get to know Islam</a>
+                        <a class="nav-link" href="#">Articles</a>
                     </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link" href="#">Books & articles</a>
-                    </li>
+                    </li> --}}
                     <li class="nav-item">
                         <a class="nav-link" href="#">About</a>
                     </li>

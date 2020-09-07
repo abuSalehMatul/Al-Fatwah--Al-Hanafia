@@ -1,3 +1,10 @@
 {
-	"Send a New Question" : "Send a New Question"
+	"Send a New Question" : "Send a New Question",
+	"Select a language" : "Select a language",
+	"Question Title" : "Question Title",
+	"Category" : "Category",
+	"Language" : "Language", 
+	"Question Description" : "Question Description",
+	"Select Category" : "Select Category",
+	"Ask" : "Ask"
 }

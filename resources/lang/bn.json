@@ -1,3 +1,10 @@
 {
-	"Send a New Question" : "নতুন প্রশ্ন করুন"
+	"Send a New Question" : "নতুন প্রশ্ন করুন",
+	"Select a language" : "Prosno koron",
+	"Question Title" : "Question Title",
+	"Category" : "Category",
+	"Language" : "Language", 
+	"Question Description" : "Question Description",
+	"Select Category" : "Select Category",
+	"Ask" : "Ask"
 }
