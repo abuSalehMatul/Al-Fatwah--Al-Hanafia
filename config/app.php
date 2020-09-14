@@ -43,7 +43,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Application URL
+    | Application URL and Websites Link
     |--------------------------------------------------------------------------
     |
     | This URL is used by the console to properly generate URLs when using
@@ -55,6 +55,10 @@ return [
     'url' => env('APP_URL', 'http://localhost'),
 
     'asset_url' => env('ASSET_URL', null),
+
+    'facebook_link' => "http://facebook.com",
+    'youtube_link' => "youtube.com",
+    'email_address' =>"email",
 
     /*
     |--------------------------------------------------------------------------

@@ -16,10 +16,10 @@
                         <a class="nav-link" href="{{route('questions.create')}}">Send a question</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">New Answers</a>
+                        <a class="nav-link" href="{{route('new_answer_list')}}">New Answers</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Articles</a>
+                        <a class="nav-link" href="{{route('all_article')}}">Articles</a>
                     </li>
                     {{-- <li class="nav-item">
                         <a class="nav-link" href="#">Books & articles</a>
@@ -31,16 +31,7 @@
                         <a class="nav-link" href="#">User guide</a>
                     </li>
                     <li>
-                        <div id="myOverlay" class="overlay">
-                            <span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span>
-                            <div class="overlay-content">
-                                <form>
-                                    <input type="text" placeholder="Type to Search.." name="search">
-                                    <button type="submit"><i class="fas fa-search"></i></button>
-                                </form>
-                            </div>
-                        </div>
-                        <button class="openBtn" onclick="openSearch()"><i class="fas fa-search"></i></button>
+                        <search-bar></search-bar>
                     </li>
                 </ul>
             </div>

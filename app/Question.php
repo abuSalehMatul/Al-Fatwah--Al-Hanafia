@@ -15,6 +15,16 @@ class Question extends Model
     	return $this->hasMany('App\Answer');
     }
 
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'created_by');
+    }
+
     public static function getByCategory($categoryId)
     {
         $locale = Session::get('APP_LOCALE');

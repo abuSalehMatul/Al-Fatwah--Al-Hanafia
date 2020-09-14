@@ -7,6 +7,11 @@
                     <div class="left-text">
                         <i class="far fa-bookmark"></i>
                         <span>
+                            <b>{{ $questionAnswer->title }}</b>
+                        </span>
+                    </div>
+                    <div class="left-text">
+                        <span>
                             {{ $questionAnswer->description }}...
                         </span>
                     </div>
@@ -18,6 +23,16 @@
                 <div class="card-body " style="background: #c3f4c1">
                     <div class="left-text">
                         <i class="fas fa-arrow-right"></i>
+                        <span>
+                            @php
+                                $answer = "answer_".app()->getLocale();
+                            @endphp
+                            @if($questionAnswer->$answer->title)
+                            {{ $questionAnswer->$answer->title }}
+                            @endif
+                        </span>
+
+                       <br>
                         <span>
                             @php
                                 $answer = "answer_".app()->getLocale();

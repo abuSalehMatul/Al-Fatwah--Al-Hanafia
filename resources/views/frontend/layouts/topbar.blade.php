@@ -3,12 +3,8 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" target="_blank" href="#"><i class="fab fa-facebook color1"></i></a>
-                    <a class="nav-link" target="_blank" href="#"><i class="fab fa-linkedin color2"></i></a>
-                    <a class="nav-link" target="_blank" href="#"><i class="fab fa-twitter color3"></i></a>
-                    <a class="nav-link" target="_blank" href="#"><i class="fab fa-pinterest color4"></i></a>
-                    <a class="nav-link" target="_blank" href="#"><i class="fab fa-youtube color5"></i></a>
-                    <a class="nav-link" target="_blank" href="#"><i class="fab fa-instagram color6"></i></a>
+                    <a class="nav-link" target="_blank"  href="{{config('app.facebook_link')}}"><i class="fab fa-facebook color1"></i></a>
+                    <a class="nav-link" target="_blank" href="{{config('app.youtube_link')}}"><i class="fab fa-youtube color5"></i></a>
                 </li>
             </ul>
             <li class="nav-item dropdown">

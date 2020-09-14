@@ -24,6 +24,34 @@ class QuestionsController extends Controller
         //
     }
 
+    public function getMostRead(){
+        $locale = Session::get('APP_LOCALE');
+        return Question::where('status', 'active')
+        ->where('language', $locale)
+        ->orderBy('view_count', 'DESC')
+        ->limit(10)
+        ->get();
+    }
+
+    public function search(Request $request)
+    {
+        $key = $request->get('key');
+        $locale = Session::get('APP_LOCALE');
+        return Question::where('status', 'active')
+        ->where('language', $locale)
+        ->where("title", 'like', "%$key%")
+        ->orderBy('view_count', 'DESC')
+        ->limit(10)
+        ->get();
+    }
+
+    public function selectedQuestions($lang)
+    {
+        $fun = "answer_". $lang;
+        $questions = Question::where('is_selected', 1)->paginate(15);
+        return view('frontend.selectedQuestions')->with('questions', $questions);
+    }
+
     public function getAnswerByQuestion($lang, $questionId)
     {
         $fun = "answer_". $lang;

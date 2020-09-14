@@ -19,7 +19,7 @@
               Selected Questions
             </h4>
             <selected-question></selected-question>
-            <a href="#" style="float: right; color: #ed174b; font-weight: 600;">See more....</a>
+            <a href="{{route('selected.answer')}}" style="float: right; color: #ed174b; font-weight: 600;">See more....</a>
           </div>
         </div>
       </div>
@@ -54,47 +54,7 @@
             <h4 class="text-center mb-4">
               <i class="fas fa-book-reader"></i> Most Read
             </h4>
-            <a href="#">
-              <div class="card">
-                <div class="card-body">
-                  <div class="left-text">
-                    <i class="far fa-bookmark"></i>
-                    <span>
-                      It is not valid to combine making up missed Ramadaan
-                      fasts with fasting six days of Shawwaal with one
-                      intention
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </a>
-            <a href="#">
-              <div class="card">
-                <div class="card-body">
-                  <div class="left-text">
-                    <i class="far fa-bookmark"></i>
-                    <span>
-                      Can a woman compare between more than one suitor before
-                      rejecting the first one?
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </a>
-            <a href="#">
-              <div class="card">
-                <div class="card-body">
-                  <div class="left-text">
-                    <i class="far fa-bookmark"></i>
-                    <span>
-                      It is not valid to combine making up missed Ramadaan
-                      fasts with fasting six days of Shawwaal with one
-                      intention
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </a>
+              <most-read :app_local="'{{app()->getLocale()}}'"></most-read>
           </div>
         </div>
         <div class="col-md-4 mb-5">
@@ -113,29 +73,11 @@
             <div class="tab-content">
               <div id="books" class="container tab-pane active">
                 <br />
-                <h5 class="text-center">70 Matters related to Fasting</h5>
-                <img src="img/books.jpg" alt="" />
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Maiores accusantium ipsa minus et ea labore ad at laudantium
-                  explicabo sed?...
-                </p>
-                <div class="btn-article text-center mb-3">
-                  <a href="#" class="btn btn-read">
-                    <i class="fas fa-book"></i> Read Book</a>
-                  <a href="#" class="btn btn-article">
-                    <i class="fas fa-download"></i> Download Book</a>
-                </div>
+                 <book-list></book-list>
               </div>
-              <div id="article" class="container tab-pane fade">
+              <div id="article" class="container tab-pane fade" style="overflow-y:scroll ">
                 <br />
-                <div class="article mb-3 p-20">
-                  <a href="#">
-                    <h4>Eid: Etiquette and rulings</h4>
-                  </a>
-                </div>
-                <a href="#" class="btn btn-article btn-block">
-                  <i class="fas fa-file"></i> Read</a>
+                <article-short :app_local="'{{app()->getLocale()}}'"></article-short>
               </div>
             </div>
           </div>
