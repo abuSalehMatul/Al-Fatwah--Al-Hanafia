@@ -32,6 +32,21 @@ class ReportController extends Controller
         ];
     }
 
+    public function getSearch(Request $request)
+    {
+        $questions = [];
+        if($request->key != ""){
+            if($request->type == "id"){
+                $questions = Question::where('id', $request->key)->get();
+            }elseif($request->type == "title"){
+                $questions = Question::where('title','like', "%".$request->key."%")->get();
+            }elseif($request->type == 'status'){
+                $questions = Question::where('status', $request->key)->get();
+            }
+        }
+        return $questions;
+    }
+
     public function getAnswerStat(Request $request)
     {
         $dates = $this->formatDate($request->fromDate, $request->toDate);

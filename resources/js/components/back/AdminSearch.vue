@@ -10,25 +10,37 @@
        <div class="col-md-8"> 
            <input type="text" v-model="key" @keyup="search()" class="form-control">
        </div>
+       <search-questions v-if="show" :questions="results"></search-questions>
     </div>
 </template>
 
 <script>
     import client from '@/client'
+    import SearchQuestions from "./SearchQuestions.vue"
     export default {
         name: "admin-search",
         components: {
-
+            SearchQuestions
         },
         data() {
             return {
                 selectType: 'id',
-                key: ""
+                key: "",
+                results: "",
+                show: false
             }
         },
         methods:{
             search(){
-                
+                client.get(window.location.origin+ "/admin/api/search?type="+this.selectType +"&key="+this.key)
+                .then(response => {
+                    this.results = response.data;
+                    if(this.results.length > 0){
+                        this.show = true;
+                    }else{
+                        this.show = false
+                    }
+                })
             }
         }
     }

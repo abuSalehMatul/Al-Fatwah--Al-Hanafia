@@ -91,6 +91,7 @@ Route::prefix('admin/api')->namespace('Admin')->group(function(){
         Route::get('question-doughnut-by-answered', 'ReportController@getQuestionDoughnutByAnswered');
         Route::get('question-doughnut-by-status', 'ReportController@getQuestionDoughnutByStatus');
         Route::get('get-by-answer-stat', 'ReportController@getAnswerStat');
+        Route::get('search', 'ReportController@getSearch');
        
     });
     
@@ -100,4 +101,11 @@ Route::prefix('admin/api')->namespace('Admin')->group(function(){
         Route::get('change-book-status/{id}/{status}', 'BookController@changeStatus');
         Route::get('delete-category/{id}', 'CategoryController@delete');
     });
+});
+
+Route::prefix('root')->middleware(['role:root'])->namespace('Admin')->group(function(){
+    Route::get('/', 'AdminController@root');
+    Route::post('admin-edit', 'AdminController@edit')->name('admin.edit');
+    Route::post('admin-save', 'AdminController@save')->name('admin.save');
+    Route::get('admin-delete/{id}', 'AdminController@delete')->name('admin.delete');
 });

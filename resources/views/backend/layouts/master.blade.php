@@ -38,7 +38,14 @@
         }
         .hover-red:hover{
             background: rgb(240, 52, 52);
-            color: white;
+            color: white !important;
+            padding: 15px;
+        }
+        .container-fluid{
+            background: white !important;
+        }
+        .custom-badge{
+            background: gainsboro;color:black
         }
         </style>
 </head>

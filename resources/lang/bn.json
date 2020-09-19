@@ -1,10 +1,20 @@
 {
 	"Send a New Question" : "নতুন প্রশ্ন করুন",
 	"Select a language" : "Prosno koron",
-	"Question Title" : "Question Title",
-	"Category" : "Category",
-	"Language" : "Language", 
-	"Question Description" : "Question Description",
-	"Select Category" : "Select Category",
-	"Ask" : "Ask"
+	"Question Title" : "প্রশ্নের শিরোনাম",
+	"Category" : "বিভাগ",
+	"Language" : "ভাষা", 
+	"Question Description" : "প্রশ্নের বিবরণ",
+	"Select Category" : "বিভাগ নির্বাচন করুন",
+	"Ask" : "জিজ্ঞাসা করুন",
+	"New_Answers" : "নতুন উত্তর",
+	"Selected_Questions": "নির্বাচিত প্রশ্ন",
+	"Welcome_to": "স্বাগতম",
+	"Important_Topics": "গুরুত্বপূর্ণ বিষয়",
+	"Most_Read": "সর্বাধিক পঠিত",
+	"Books": "বই",
+	"See_More": "আরো দেখুন",
+	"Articles": "নিবন্ধ",
+	"About":"আমাদের সম্পর্কে",
+	"Terms": "শর্তাদি"
 }

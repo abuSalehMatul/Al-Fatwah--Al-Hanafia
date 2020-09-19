@@ -7,19 +7,19 @@
         <div class="col-md-8 mb-4">
           <div class="new_answer mb-5">
             <h4 class="text-center mb-4">
-              <i class="fas fa-feather-alt"></i> New Answers
+              <i class="fas fa-feather-alt"></i> {{__('New_Answers')}}
             </h4>
             <new-answer></new-answer>
-            <a href="{{route('new_answer_list')}}" style="float: right; color: #ed174b; font-weight: 600;">See more....</a>
+            <a href="{{route('new_answer_list')}}" style="float: right; color: #ed174b; font-weight: 600;">{{__('See_More')}}....</a>
           </div>
         </div>
         <div class="col-md-4 mb-4">
           <div class="selected_answer">
             <h4 class="text-center mb-4" style="font-size: 20px;">
-              Selected Questions
+              {{__('Selected_Questions')}}
             </h4>
             <selected-question></selected-question>
-            <a href="{{route('selected.answer')}}" style="float: right; color: #ed174b; font-weight: 600;">See more....</a>
+            <a href="{{route('selected.answer')}}" style="float: right; color: #ed174b; font-weight: 600;">{{__('See_More')}}....</a>
           </div>
         </div>
       </div>
@@ -30,9 +30,9 @@
       <div class="row">
         <div class="col-xl-12 col-md-12">
           <div class="section_heading text-center">
-            <span>Welcome to</span>
+            <span> {{__('Welcome_to')}}</span>
             <h3>
-              <i class="fas fa-exclamation-circle"></i> Important Topics
+              <i class="fas fa-exclamation-circle"></i>{{__('Important_Topics')}}
             </h3>
           </div>
         </div>
@@ -52,7 +52,7 @@
         <div class="col-md-8 mb-5">
           <div class="new_answer mb-5">
             <h4 class="text-center mb-4">
-              <i class="fas fa-book-reader"></i> Most Read
+              <i class="fas fa-book-reader"></i> {{__('Most_Read')}}
             </h4>
               <most-read :app_local="'{{app()->getLocale()}}'"></most-read>
           </div>
@@ -62,10 +62,10 @@
             <!-- Nav tabs -->
             <ul class="nav nav-tabs">
               <li class="nav-item">
-                <a class="nav-link active" data-toggle="tab" href="#books">Books</a>
+                <a class="nav-link active" data-toggle="tab" href="#books">{{__('Books')}}</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#article">Articles</a>
+                <a class="nav-link" data-toggle="tab" href="#article">{{__('Articles')}}</a>
               </li>
             </ul>
 

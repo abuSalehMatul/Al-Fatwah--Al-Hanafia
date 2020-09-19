@@ -5,14 +5,17 @@
             <div class="card">
                 <div class="card-body">
                     <div class="left-text">
+                        @php
+                            $answer = "answer_".app()->getLocale();
+                        @endphp
                         <i class="far fa-bookmark"></i>
                         <span>
-                            <b>{{ $questionAnswer->title }}</b>
+                            <b>{{ $questionAnswer->$answer->question_title }}</b>
                         </span>
                     </div>
                     <div class="left-text">
                         <span>
-                            {{ $questionAnswer->description }}...
+                            {{ $questionAnswer->$answer->question }}
                         </span>
                     </div>
                 </div>

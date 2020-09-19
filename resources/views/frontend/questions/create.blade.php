@@ -9,7 +9,7 @@
       @include('frontend.questions.form_fields')
       <div class="form-group row">
         <div class="col-md-12 text-right">
-          <button class="btn btn-success"></{{__('Ask')}}button>
+          <button class="btn btn-success">{{__('Ask')}}</button>
         </div>
       </div>
     </form>

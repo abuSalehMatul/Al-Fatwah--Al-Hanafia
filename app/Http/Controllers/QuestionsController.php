@@ -56,7 +56,10 @@ class QuestionsController extends Controller
     {
         $fun = "answer_". $lang;
         $questionWithAns = Question::findOrFail($questionId)->load($fun);
-        return view('frontend.questionAns')->with('questionAnswer', $questionWithAns);
+        if($questionWithAns->$fun->status == 'active'){
+            return view('frontend.questionAns')->with('questionAnswer', $questionWithAns);
+        }
+        return redirect('/');
     }
 
     public function getSelectedQuestion()

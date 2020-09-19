@@ -6,5 +6,16 @@
 	"Language" : "Language", 
 	"Question Description" : "Question Description",
 	"Select Category" : "Select Category",
-	"Ask" : "Ask"
+	"Ask" : "Ask",
+	"New_Answers": "New Answers",
+	"Selected_Questions": "Selected Questions",
+	"Welcome_to": "Welcome To",
+	"Important_Topics": "Important Topics",
+	"Most_Read": "Most Read",
+	"Books": "Books",
+	"Articles": "Articles",
+	"See_More": "See More",
+	"About": "About",
+	"Terms": "Terms"
+
 }
