@@ -2,14 +2,24 @@
 @section('content')
     <div class="container-fluid">
 
+        <br>
+        @role('admin')
+        <div class="card col-md-2 col-sm-6">
+            <a href="{{route('admin.create.article')}}" class="btn btn-success">Add An Article </a> 
+        </div>
+        <br>
+        <hr>
+        @endrole
         <div class="row">
             @foreach ($articles as $article)
                 
                     <div class="col-md-12">
-                        <div class="white-box">
+                        <div class="white-box hover-red">
                             <a href="{{ route('admin.article.find', $article->id) }}">
                             <h4 class="box-title">
                                 <b class="badge badge-secondary"> {{ $article->status }}</b>
+                                <b class="badge badge-secondary"> {{ $article->language }}</b>
+                                <b class="badge badge-secondary"> {{ $article->category->name }}</b>
                                 {{ $article->title }}
                             </h4>
                             </a>

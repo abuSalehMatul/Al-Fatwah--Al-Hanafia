@@ -6,7 +6,7 @@
         </div>
         <ul class="nav" id="side-menu">
             <li style="padding: 70px 0 0;">
-                <a href="dashboard.html" class="waves-effect"><i class="fa fa-clock-o fa-fw"
+                <a href="{{route('admin')}}" class="waves-effect"><i class="fa fa-clock-o fa-fw"
                         aria-hidden="true"></i>Dashboard</a>
             </li>
             <li>
@@ -26,8 +26,12 @@
                         aria-hidden="true"></i>Article</a>
             </li>
             <li>
-                <a href="blank.html" class="waves-effect"><i class="fa fa-columns fa-fw"
-                        aria-hidden="true"></i>Blank Page</a>
+                <a href="{{route('admin.books')}}" class="waves-effect"><i class="fa fa-columns fa-fw"
+                        aria-hidden="true"></i>Books</a>
+            </li>
+            <li>
+                <a href="{{route('admin.category')}}" class="waves-effect"><i class="fa fa-columns fa-fw"
+                        aria-hidden="true"></i>Category</a>
             </li>
         </ul>
     </div>

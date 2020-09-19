@@ -57,7 +57,7 @@ Route::group(['prefix' => 'api'], function () {
 
 Route::prefix('admin')->namespace('Admin')->group(function () {
     Route::middleware(['auth', 'role:admin|sub_admin'])->group(function () {
-        Route::get('/', 'AdminController@index');
+        Route::get('/', 'AdminController@index')->name('admin');
         Route::get('questions', 'QuestionController@getAll')->name("admin.questions");
         Route::get('question/{id}', 'QuestionController@find')->name('admin.question');
         Route::post('add-tag', 'QuestionController@addTag')->name("question.add.tag");
@@ -68,10 +68,19 @@ Route::prefix('admin')->namespace('Admin')->group(function () {
         Route::post('question-edit', 'QuestionController@saveEdit')->name('admin.question.edit');
         Route::get('articles', 'ArticleController@getAll')->name('admin.articles');
         Route::get('article/{id}', 'ArticleController@find')->name('admin.article.find');
+        Route::post('article-edit', 'ArticleController@edit')->name('admin.article.edit');
+        Route::get('books', 'BookController@getAll')->name('admin.books');
+        Route::get('add-book', 'BookController@createForm');
+        Route::post('add-book', 'BookController@save')->name('admin.book.create.save');
+        Route::get('category', 'CategoryController@getAll')->name('admin.category');
     });
     Route::middleware(['auth', 'role:admin'])->group(function(){
         Route::get('change-question0-status/{id}/{status}', 'QuestionController@changeStatus')->name('question.change.status');
         Route::get('change-selection/{id}', 'QuestionController@changeSelection')->name('question.selection');
+        Route::get('article-create', 'ArticleController@createForm')->name('admin.create.article');
+        Route::post('article-create', 'ArticleController@save')->name('admin.article.create.save');
+        Route::get('admin-category', 'CategoryController@add')->name('admin.add.category');
+        Route::post('admin-category', 'CategoryController@save')->name('admin.category.save');
     });
 });
 
@@ -79,11 +88,16 @@ Route::prefix('admin/api')->namespace('Admin')->group(function(){
     Route::middleware(['auth', 'role:admin|sub_admin'])->group(function(){
         Route::get('get-question/{lang}/{id}', 'QuestionController@findApi');
         Route::post('save-answer', 'AnswerController@save');
+        Route::get('question-doughnut-by-answered', 'ReportController@getQuestionDoughnutByAnswered');
+        Route::get('question-doughnut-by-status', 'ReportController@getQuestionDoughnutByStatus');
+        Route::get('get-by-answer-stat', 'ReportController@getAnswerStat');
        
     });
     
     Route::middleware(['auth', 'role:admin'])->group(function(){
         Route::get('change-answer-status/{status}/{id}', 'AnswerController@changeStatus');
         Route::get('article-status-change/{id}/{status}', 'ArticleController@changeStatus');
+        Route::get('change-book-status/{id}/{status}', 'BookController@changeStatus');
+        Route::get('delete-category/{id}', 'CategoryController@delete');
     });
 });

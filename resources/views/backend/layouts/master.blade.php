@@ -36,6 +36,10 @@
             top: 20px;
             margin: 10px;
         }
+        .hover-red:hover{
+            background: rgb(240, 52, 52);
+            color: white;
+        }
         </style>
 </head>
 

@@ -8,3 +8,4 @@ Vue.component('article-short', require('@/components/front/ArticleShort.vue').de
 Vue.component('book-list', require('@/components/front/BookList.vue').default);
 Vue.component('search-bar', require('@/components/front/SearchBar.vue').default);
 
+

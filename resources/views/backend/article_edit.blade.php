@@ -1,23 +1,27 @@
 @extends('backend.layouts.master')
 @section('content')
 <div class="container-fluid">
-    <div class="row bg-title">
-        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-            <h4 class="page-title">Blank Page</h4>
-        </div>
-        <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
-           
-            <ol class="breadcrumb">
-                <li><a href="#">Dashboard</a></li>
-                <li class="active">Blank Page</li>
-            </ol>
-        </div>
-        <!-- /.col-lg-12 -->
-    </div>
     <div class="row">
         <div class="col-md-12">
             <div class="white-box">
-                <h3 class="box-title">Blank Page</h3>
+                <form method="POST" action="{{route('admin.article.edit')}}">
+                    @csrf
+                    <input type="hidden" name="article_id" value="{{$article->id}}">
+                    <div class="form-group">
+                        <label>Title </label>
+                        <input type="text" name="title" value="{{$article->title}}" class="form-control">
+                    </div> 
+                    <hr>
+                    <div class="form-group">
+                        <label>Aritcle .</label>
+                        <textarea name="body" rows="20" class="form-control">
+                            {{$article->body}}
+                        </textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn badge-info" style="width: 100%" value="Save">
+                    </div>
+                </form>
             </div>
         </div>
     </div>
