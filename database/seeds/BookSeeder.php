@@ -15,8 +15,8 @@ class BookSeeder extends Seeder
         $faker = Faker\Factory::create();
         for($i = 0; $i < 20; $i++){
             $data = [
-                'title' => $faker->text,
-                'writer' => $faker->text,
+                'title' => $faker->word,
+                'writer' => $faker->sentence(5, true),
                 'status' => "active",
                 'language' => $faker->randomElement(['en', 'bn', 'ar']),
                 'link' => 'http://alfatwat.book.com',

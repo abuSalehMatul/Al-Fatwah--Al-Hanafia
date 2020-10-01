@@ -70,6 +70,23 @@
         function logout(){
             document.getElementById('logout-form').submit();
         }
+        function toggleLang(){
+            let langDiv = document.getElementById('langdiv');
+            if(langDiv.style.display == 'none'){
+                langDiv.style.display = "block";
+            }else{
+                langDiv.style.display = "none";
+            }
+
+        }
+        function toggleLogout(){
+            let logOUt = document.getElementById('logout-btn');
+            if(logOUt.style.display == 'none'){
+                logOUt.style.display = "block";
+            }else{
+                logOUt.style.display = "none";
+            }
+        }
     </script>
     @yield('js')
 </body>

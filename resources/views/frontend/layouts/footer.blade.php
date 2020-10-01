@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8">
-                <p>All Rights Reserved by @al-fatwa...... <span>Developed by Mtech (saleh.matul@gmail.com)</span></p>
+                <p>All Rights Reserved by @al-fatwa...... <span>Developed by SJTech (saleh.matul@gmail.com)</span></p>
               
             </div>
             <div class="col-md-4">

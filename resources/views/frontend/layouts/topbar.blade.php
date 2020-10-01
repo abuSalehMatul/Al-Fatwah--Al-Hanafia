@@ -8,10 +8,10 @@
                 </li>
             </ul>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownforlang" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-globe-americas"></i>
+                <a class="nav-link dropdown-toggle" onclick="toggleLang()" href="#" id="navbarDropdownforlang" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-globe-americas"></i>
                     {{config("app_langs.".app()->getLocale())}}
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownforlang">
+                <div class="dropdown-menu matul" id="langdiv" aria-labelledby="navbarDropdownforlang">
                     @foreach(config('app_langs') as $key => $lang)
                     <a class="dropdown-item" href="{{url('/').'/'. $key}}">{{$lang}}</a>
                     @endforeach
@@ -29,11 +29,11 @@
                 @endif
             @else
                 <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        {{ Auth::user()->name }} <span class="caret"></span>
+                    <a  id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ Auth::user()->name }} <span onclick="toggleLogout()" class="caret"></span>
                     </a>
 
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <div class="dropdown-menu dropdown-menu-right"  aria-labelledby="navbarDropdown">
                         <a id="logout-btn" class="dropdown-item" href="#" onclick="logout();">
                             {{ __('Logout') }}
                         </a>
