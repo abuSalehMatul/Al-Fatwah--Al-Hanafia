@@ -14,6 +14,7 @@ class SetLocale
         app()->setLocale($APP_LOCALE);
         
         view()->share('APP_LOCALE', $APP_LOCALE);
+        session()->put('APP_LOCALE', $APP_LOCALE);
 
         $request->route()->forgetParameter('locale');
 

@@ -2,5 +2,22 @@
 	"Send a New Question" : "নতুন প্রশ্ন করুন",
 	"New Answers" : "নতুন উত্তর সমুহ",
 	"Sorry Nothing found" : "দুঃখিত, কিছুই পাওয়া যায় নি",
-	"Selected Questions" : "নির্বাচিত প্রশ্ন সমুহ"
+	"Selected Questions" : "নির্বাচিত প্রশ্ন সমুহ",
+	"Select a language" : "Prosno koron",
+	"Question Title" : "প্রশ্নের শিরোনাম",
+	"Category" : "বিভাগ",
+	"Language" : "ভাষা", 
+	"Question Description" : "প্রশ্নের বিবরণ",
+	"Select Category" : "বিভাগ নির্বাচন করুন",
+	"Ask" : "জিজ্ঞাসা করুন",
+	"New_Answers" : "নতুন উত্তর",
+	"Selected_Questions": "নির্বাচিত প্রশ্ন",
+	"Welcome_to": "স্বাগতম",
+	"Important_Topics": "গুরুত্বপূর্ণ বিষয়",
+	"Most_Read": "সর্বাধিক পঠিত",
+	"Books": "বই",
+	"See_More": "আরো দেখুন",
+	"Articles": "নিবন্ধ",
+	"About":"আমাদের সম্পর্কে",
+	"Terms": "শর্তাদি"
 }

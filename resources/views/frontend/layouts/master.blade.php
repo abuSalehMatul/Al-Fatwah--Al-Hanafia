@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'AlFatwah') }}</title>
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <!--Font Awesome Icon-->
     {{-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" /> --}}
@@ -26,10 +26,13 @@
 </head>
 
 <body>
-    @include('frontend.layouts.topbar')
-    @include('frontend.layouts.navbar')
-    @yield('content')
-    @include('frontend.layouts.footer')
+    <div id="app">
+        @include('frontend.layouts.topbar')
+        @include('frontend.layouts.navbar')
+        @yield('content')
+        @include('frontend.layouts.footer')
+    </div>
+   
     
     <div class="modal fade" id="form_modal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-lg">
@@ -101,6 +104,23 @@
     <script type="text/javascript">
         function logout(){
             document.getElementById('logout-form').submit();
+        }
+        function toggleLang(){
+            let langDiv = document.getElementById('langdiv');
+            if(langDiv.style.display == 'none'){
+                langDiv.style.display = "block";
+            }else{
+                langDiv.style.display = "none";
+            }
+
+        }
+        function toggleLogout(){
+            let logOUt = document.getElementById('logout-btn');
+            if(logOUt.style.display == 'none'){
+                logOUt.style.display = "block";
+            }else{
+                logOUt.style.display = "none";
+            }
         }
     </script>
 

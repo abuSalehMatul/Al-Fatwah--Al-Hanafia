@@ -3,19 +3,15 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" target="_blank" href="#"><i class="fab fa-facebook color1"></i></a>
-                    <a class="nav-link" target="_blank" href="#"><i class="fab fa-linkedin color2"></i></a>
-                    <a class="nav-link" target="_blank" href="#"><i class="fab fa-twitter color3"></i></a>
-                    <a class="nav-link" target="_blank" href="#"><i class="fab fa-pinterest color4"></i></a>
-                    <a class="nav-link" target="_blank" href="#"><i class="fab fa-youtube color5"></i></a>
-                    <a class="nav-link" target="_blank" href="#"><i class="fab fa-instagram color6"></i></a>
+                    <a class="nav-link" target="_blank"  href="{{config('app.facebook_link')}}"><i class="fab fa-facebook color1"></i></a>
+                    <a class="nav-link" target="_blank" href="{{config('app.youtube_link')}}"><i class="fab fa-youtube color5"></i></a>
                 </li>
             </ul>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-globe-americas"></i>
+                <a class="nav-link dropdown-toggle" onclick="toggleLang()" href="#" id="navbarDropdownforlang" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-globe-americas"></i>
                     {{config("app_langs.".app()->getLocale())}}
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <div class="dropdown-menu matul" id="langdiv" aria-labelledby="navbarDropdownforlang">
                     @foreach(config('app_langs') as $key => $lang)
                     <a class="dropdown-item" href="{{route('home',['locale' => $key])}}">{{$lang}}</a>
                     @endforeach
@@ -34,11 +30,11 @@
                 @endif
             @else
                 <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        {{ Auth::user()->name }} <span class="caret"></span>
+                    <a  id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ Auth::user()->name }} <span onclick="toggleLogout()" class="caret"></span>
                     </a>
 
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <div class="dropdown-menu dropdown-menu-right"  aria-labelledby="navbarDropdown">
                         <a id="logout-btn" class="dropdown-item" href="#" onclick="logout();">
                             {{ __('Logout') }}
                         </a>

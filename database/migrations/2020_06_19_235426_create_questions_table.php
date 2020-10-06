@@ -25,7 +25,7 @@ class CreateQuestionsTable extends Migration
            // $table->unsignedBigInteger('assign_to')->nullable();
             $table->string('tag')->nullable();
             $table->string('reference')->nullable();
-            
+            $table->tinyInteger('is_selected')->default(0);
             $table->unsignedBigInteger('created_by')->nullable();
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->unsignedBigInteger('deleted_by')->nullable();

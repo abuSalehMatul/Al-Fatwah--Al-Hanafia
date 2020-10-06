@@ -19,12 +19,12 @@ class CreateAnswersTable extends Migration
             $table->unsignedBigInteger('parent_id')->nullable();
             $table->string('title')->nullable();
             $table->string('slug')->nullable();
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->enum('language', ['en', 'bn', 'ar'])->default('en');
             $table->text('reference')->nullable();
             $table->enum('status', ['active', 'inactive', 'pending', 'denied', 'in-revision'])->default('pending');
             $table->unsignedBigInteger('question_id');
-            $table->unsignedBigInteger('category_id');
+            $table->unsignedBigInteger('category_id')->nullable();
             $table->string('tag')->nullable();
             
             $table->unsignedBigInteger('created_by')->nullable();

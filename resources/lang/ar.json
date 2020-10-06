@@ -2,5 +2,22 @@
 	"Send a New Question" : " أرسل سؤالاً  ",
 	"New Answers" : " جديد الإجابات  ",
 	"Sorry Nothing found" : " عذرا لم يتم العثور على شيء  ",
-	"Selected Questions" : "  أسئلة مختارة  "
+	"Selected Questions" : "  أسئلة مختارة  ",
+	"Select a language" : "as",
+	"Question Title" : "عنوان السؤال",
+	"Category" : "الفئة",
+	"Language" : "لغة", 
+	"Question Description" : "وصف السؤال",
+	"Select Category" : "اختر الفئة",
+	"Ask" : "يطلب",
+	"New_Answers" : "إجابات جديدة",
+	"Selected_Questions": "أسئلة مختارة",
+	"Welcome_to": "مرحبا بك في",
+	"Important_Topics": "مواضيع مهمة",
+	"Most_Read": "الأكثر قراءة",
+	"Books": "كتب",
+	"Articles": "مقالات",
+	"See_More": "شاهد المزيد",
+	"About": "معلومات عنا",
+	"Terms": "شروط"
 }
