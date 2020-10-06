@@ -18,15 +18,15 @@ class ArticleController extends Controller
         ->get();
     }
 
-    public function show($lang, $id)
+    public function show($id)
     {
         $article = Article::findOrFail($id);
         return view('frontend.article')->with('article', $article);
     }
 
-    public function getAll($lang)
+    public function getAll()
     {
-        $articles = Article::where('language', $lang)->where('status', 'active')->paginate(15);
+        $articles = Article::where('language', app()->getLocale())->where('status', 'active')->paginate(15);
         return view('frontend.all_article')->with('articles', $articles);
     }
 }

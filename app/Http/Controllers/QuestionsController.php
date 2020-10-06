@@ -45,16 +45,16 @@ class QuestionsController extends Controller
         ->get();
     }
 
-    public function selectedQuestions($lang)
+    public function selectedQuestions()
     {
-        $fun = "answer_". $lang;
+        $fun = "answer_". app()->getLocale();
         $questions = Question::where('is_selected', 1)->paginate(15);
         return view('frontend.selectedQuestions')->with('questions', $questions);
     }
 
-    public function getAnswerByQuestion($lang, $questionId)
+    public function getAnswerByQuestion($questionId)
     {
-        $fun = "answer_". $lang;
+        $fun = "answer_". app()->getLocale();
         $questionWithAns = Question::findOrFail($questionId)->load($fun);
         if($questionWithAns->$fun->status == 'active'){
             return view('frontend.questionAns')->with('questionAnswer', $questionWithAns);

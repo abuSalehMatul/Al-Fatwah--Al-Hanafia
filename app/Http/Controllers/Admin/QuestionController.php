@@ -37,9 +37,9 @@ class QuestionController extends Controller
         return view('backend.singleQuestion')->with('question', $question);
     }
 
-    public function findApi($lang, $questionId)
+    public function findApi($questionId)
     {
-        $fun = "answer_". $lang;
+        $fun = "answer_". app()->getLocale();
         return $questionWithAns = Question::findOrFail($questionId)->load($fun);
     }
     public function saveEdit(Request $request)

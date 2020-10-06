@@ -22,7 +22,7 @@ class CategoryController extends Controller
         return Question::getByCategory($categoryId);
     }
 
-    public function showByCategory($lang, $categoryId)
+    public function showByCategory($categoryId)
     {
         $questions = Question::getByCategory($categoryId);
         return view('frontend.category')->with('questions', $questions);

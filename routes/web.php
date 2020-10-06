@@ -111,6 +111,3 @@ Route::prefix('root')->middleware(['role:root'])->namespace('Admin')->group(func
     Route::post('admin-save', 'AdminController@save')->name('admin.save');
     Route::get('admin-delete/{id}', 'AdminController@delete')->name('admin.delete');
 });
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

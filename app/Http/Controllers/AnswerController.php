@@ -15,16 +15,16 @@ class AnswerController extends Controller
         return Answer::where('status', 'active')->where('language', $locale)->orderBy('created_at', 'DESC')->limit(3)->get();
     }
 
-    public function getList($lang)
+    public function getList()
     {
-        $answers = Answer::where('status', 'active')->where('language', $lang)->orderBy('created_at', 'DESC')->paginate(15);
+        $answers = Answer::where('status', 'active')->where('language', app()->getLocale())->orderBy('created_at', 'DESC')->paginate(15);
         return view('frontend.answer_list')->with('answers', $answers);
     }
 
-    public function findAnswer($lang , $batchId)
+    public function findAnswer($batchId)
     {
         $answer = Answer::where('batch_id', $batchId)->first();
-        $fun = "answer_". $lang;
+        $fun = "answer_". app()->getLocale();
         $questionWithAns = Question::findOrFail($answer->question_id)->load($fun);
         return view('frontend.questionAns')->with('questionAnswer', $questionWithAns);
     }
