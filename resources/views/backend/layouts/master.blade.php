@@ -24,12 +24,7 @@
     <!-- color CSS -->
     <link href="{{asset('admin_asset/css/colors/default.css')}}" id="theme" rel="stylesheet">
     @yield('css')
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
+   
         <style> 
         .space-position{
             position: relative;
@@ -40,6 +35,7 @@
             background: #97BC62FF;
             color: white !important;
             padding: 15px;
+            font-weight: 700;
         }
         .container-fluid{
             background: white !important;
@@ -51,9 +47,6 @@
 </head>
 
 <body class="fix-header">
-    <!-- ============================================================== -->
-    <!-- Preloader -->
-    <!-- ============================================================== -->
     <div class="preloader">
         <svg class="circular" viewBox="25 25 50 50">
             <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
@@ -68,7 +61,7 @@
             <div id="page-wrapper">
                 @yield('content')
                 <!-- /.container-fluid -->
-                <footer class="footer text-center"> Developed By ASMatul.. All rights Reserved By Al-Fatwa </footer>
+                <footer class="footer text-center"> Developed By SJOpt . All rights Reserved By Alfatawa-alhanafia</footer>
             </div>
             <!-- ============================================================== -->
             <!-- End Page Content -->
@@ -78,17 +71,9 @@
     
     <!-- /#wrapper -->
     <script src="{{ asset('js/appBackend.js') }}"></script>
-    <!-- jQuery -->
-    {{-- <script src="{{asset('admin_asset/plugins/bower_components/jquery/dist/jquery.min.js')}}"></script> --}}
-    <!-- Bootstrap Core JavaScript -->
-    {{-- <script src="{{asset('admin_asset/bootstrap/dist/js/bootstrap.min.js')}}"></script> --}}
-    <!-- Menu Plugin JavaScript -->
+  
     <script src="{{asset('admin_asset/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js')}}"></script>
-    <!--slimscroll JavaScript -->
-    {{-- <script src="{{asset('admin_asset/js/jquery.slimscroll.js')}}"></script> --}}
-    <!--Wave Effects -->
-    {{-- <script src="{{asset('admin_asset/js/waves.js')}}"></script> --}}
-    <!-- Custom Theme JavaScript -->
+    
     <script src="{{asset('admin_asset/js/custom.min.js')}}"></script>
     @yield('js')
 </body>

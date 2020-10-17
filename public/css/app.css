@@ -6,8 +6,10 @@
   font-size: 19px;
   font-weight: 700;
   line-height: 23px;
+  width: 70%;
   text-align: center;
   border-bottom: 1px solid #ED174B;
+  margin-left: 15%;
 }
 
 .p-l-0 {

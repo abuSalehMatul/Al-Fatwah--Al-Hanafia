@@ -76,6 +76,8 @@ Route::prefix('admin')->namespace('Admin')->group(function () {
         Route::get('get-media', 'MediaController@getMedia')->name('admin.media');
         Route::get('add-media', 'MediaController@add')->name('admin.add.media');
         Route::post('store-media', 'MediaController@store')->name('admin.media.store');
+        Route::get('email', 'AdminController@email')->name('admin.email');
+        Route::post('send-email', 'AdminController@sendEmail')->name('admin.send.email');
     });
     Route::middleware(['auth', 'role:admin'])->group(function(){
         Route::get('change-question0-status/{id}/{status}', 'QuestionController@changeStatus')->name('question.change.status');
@@ -109,8 +111,9 @@ Route::prefix('admin/api')->namespace('Admin')->group(function(){
 });
 
 Route::prefix('root')->middleware(['role:root'])->namespace('Admin')->group(function(){
-    Route::get('/', 'AdminController@root');
+    Route::get('/', 'AdminController@root')->name('root.admin');
     Route::post('admin-edit', 'AdminController@edit')->name('admin.edit');
     Route::post('admin-save', 'AdminController@save')->name('admin.save');
     Route::get('admin-delete/{id}', 'AdminController@delete')->name('admin.delete');
+    Route::get('email-root', 'AdminController@getEmailList')->name('root.email');
 });

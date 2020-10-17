@@ -4,7 +4,7 @@
             <!-- Logo -->
             
             <a class="logo" href="{{url('/')}}">
-               <b style="color: black"> Al Fatwa</b>
+               <b style="color: black;--font-family-monospace: yellowgreen;font-weight: 600;"> Alfatawa-alhanafia</b>
             </a>
         </div>
         <!-- /Logo -->

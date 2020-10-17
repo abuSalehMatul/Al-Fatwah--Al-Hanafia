@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Illuminate\Support\Facades\Mail;
+use App\Mail\AlfatwahAlHanafia;
 use App\Answer;
+use Illuminate\Support\Facades\Storage;
 use App\Article;
 use App\Book;
 use App\Category;
+use App\EmailList;
 use App\Question;
 use App\User;
 use Illuminate\Http\Request;
@@ -88,5 +92,43 @@ class AdminController extends Controller
         $user->save();
         return redirect()->back();
 
+    }
+
+    public function sendEmail(Request $request)
+    {
+        $request->validate([
+            'subject' => 'required',
+            'body' => 'required',
+            'recipent' => 'required'
+        ]);
+        if(auth()->user()->email_permission == 1){
+            $file = "";
+            if(isset($request->file)){
+                $path = $request->file('file')->store('public');
+                $file = Storage::url($path);
+            }
+            Mail::to($request->recipent)->send(new AlfatwahAlHanafia($request->subject, $request->body, $file));
+            $email = new EmailList();
+            $email->sender_id = auth()->id();
+            $email->receiver_email = $request->recipent;
+            $email->body = $request->body;
+            $email->subject = $request->subject;
+            $email->save();
+            return redirect()->back();
+        }
+    }
+
+    public function getEmailList()
+    {
+        $emails = EmailList::orderBy('created_at', 'DESC')->paginate(20);
+        return view('backend.emailList')->with('emails', $emails);
+    }
+    public function email()
+    {
+        if(auth()->user()->email_permission == 1){
+            return view('backend.email');
+        }else{
+            return redirect()->back();
+        }
     }
 }
