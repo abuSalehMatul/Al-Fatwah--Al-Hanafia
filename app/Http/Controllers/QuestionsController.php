@@ -92,11 +92,10 @@ class QuestionsController extends Controller
      */
     public function store(QuestionCreateRequest $request)
     {
-        //
-        // return $request;
+        /// return $request;
 
         try {
-            $data_array = $request->only(['title', 'language', 'category_id', 'description']);
+            $data_array = $request->only(['title','description']);
             $data_array['id'] = null;
             $question = $this->createOrUpdateQuestion($data_array);
 
@@ -173,6 +172,8 @@ class QuestionsController extends Controller
                 $data_array['created_by'] = Auth::id();
             }
             $data_array['slug'] = \Str::slug($data_array['title'], '-');
+            $data_array['language'] = app()->getLocale();
+            
 
             $question = Question::updateOrCreate($data_array);
 

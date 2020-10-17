@@ -20,7 +20,7 @@ class CreateQuestionsTable extends Migration
             $table->text('description');
             $table->enum('status', ['active', 'inactive', 'pending', 'denied', 'in-revision'])->default('active');
             $table->integer('is_answered')->default(0);
-            $table->unsignedBigInteger('category_id');
+            $table->unsignedBigInteger('category_id')->nullable();
             $table->enum('language', ['en', 'bn', 'ar'])->default('en');
            // $table->unsignedBigInteger('assign_to')->nullable();
             $table->string('tag')->nullable();

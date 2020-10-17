@@ -1,10 +1,12 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
+use Illuminate\Support\Facades\Mail;
+use App\Mail\AnswerGiven;
 use App\Answer;
 use App\Http\Controllers\Controller;
 use App\Question;
+use Exception;
 use Illuminate\Http\Request;
 
 class AnswerController extends Controller
@@ -20,19 +22,47 @@ class AnswerController extends Controller
         $question->save();
         $answer = Answer::where('question_id', $request->question_id)->get();
 
-        if($answer){
+        if($answer->count() > 0){
             $answerByLang = Answer::where('question_id', $request->question_id)->where('language', $request->lang)->first();
             if($answerByLang){
-                return $this->updateAns($request, $answerByLang);
+                $this->updateAns($request, $answerByLang);
+                $link = url('/')."/".$request->lang. "/answer/".$answerByLang->batch_id;
+                try{
+                     Mail::to($question->user->email)->send(new AnswerGiven($link));
+                     return 1;
+                }
+                catch(Exception $e){
+                    return "mail couldn't be sent";
+                }
+               
             }
             else{
+              
                 $newAns = $this->createAnsWithBatch($request, $answer[0]->batch_id);
-                return $this->updateAns($request, $newAns);
+                $this->updateAns($request, $newAns);
+                $link = url('/')."/".$request->lang. "/answer/".$newAns->batch_id;
+                try{
+                     Mail::to($question->user->email)->send(new AnswerGiven($link));
+                     return 1;
+                }
+                catch(Exception $e){
+                    return "mail couldn't be sent";
+                }
+               
             }
         }else{
             $rand = rand(2, 20000).time();
             $newAns = $this->createAnsWithBatch($request, $rand);
-            return $this->updateAns($request, $newAns);
+            $this->updateAns($request, $newAns);
+            $link = url('/')."/".$request->lang. "/answer/".$newAns->batch_id;
+            try{
+                 Mail::to($question->user->email)->send(new AnswerGiven($link));
+                 return 1;
+            }
+            catch(Exception $e){
+                return "mail couldn't be sent";
+            }
+           
         }
     }
 

@@ -24,14 +24,13 @@
         <input type="radio" value="ar" v-model="lang" @change="getAnswer()" />Arabic
       </label>
     </div>
-    <hr>
-    <div class="offset-2">
+    <div class="">
         <i> Answer Status: <b class="badge badge-info">{{status}}</b></i>
         <br>
         <label>Add A tag for this Answer</label>
         <input type="text" v-model="tag">
         <span v-if="role == 'admin'">
-        <label> Change Question Status</label>
+        <label> Change Answer Status</label>
         <select v-model="status" @change="changeStatus()"> 
             <option value="active">Active</option>
             <option value="pending">Pending</option>

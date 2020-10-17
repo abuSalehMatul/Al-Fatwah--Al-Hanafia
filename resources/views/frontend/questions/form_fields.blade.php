@@ -4,7 +4,7 @@
     <input type="text" class="form-control" required id="title" name="title">
   </div>
 </div>
-<div class="form-group row">
+{{-- <div class="form-group row">
   <label for="language" class="col-sm-2 col-form-label">{{__('Language')}}</label>
   <div class="col-sm-10">
     <select class="form-control" required id="language" name="language">
@@ -14,8 +14,8 @@
       @endforeach
     </select>
   </div>
-</div>
-<div class="form-group row">
+</div> --}}
+{{-- <div class="form-group row">
   <label for="category" class="col-sm-2 col-form-label">{{__('Category')}}</label>
   <div class="col-sm-10">
     <select class="form-control" required id="category" name="category_id">
@@ -25,7 +25,7 @@
       @endforeach
     </select>
   </div>
-</div>
+</div> --}}
 <div class="form-group row">
   <label for="description" class="col-sm-2 col-form-label">{{__('Question Description')}}</label>
   <div class="col-sm-10">

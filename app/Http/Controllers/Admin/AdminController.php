@@ -72,7 +72,7 @@ class AdminController extends Controller
     }
 
     public function edit(Request $request)
-    {
+    {   
         $request->validate([
             'admin_id' => 'required',
             'name' => 'required',
@@ -80,6 +80,7 @@ class AdminController extends Controller
         ]);
         $user = User::findOrFail($request->admin_id);
         $user->name = $request->name;
+        $user->email_permission = $request->email_permission?? 0;
         if($request->password){
             $user->password = Hash::make($request->password);
         }

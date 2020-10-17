@@ -25,8 +25,6 @@ class QuestionCreateRequest extends FormRequest
     {
         return [
             'title' => 'required|string', 
-            'language' => 'required|string', 
-            'category_id' => 'required|numeric',
             'description' => 'nullable|string'
         ];
         

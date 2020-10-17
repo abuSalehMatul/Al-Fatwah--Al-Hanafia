@@ -32,3 +32,6 @@
         </div>
     </nav>
 </div>
+<div class="col-md-10 offset-1 intro">
+    {{__('Intro')}}
+</div>

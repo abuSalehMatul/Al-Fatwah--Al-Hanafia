@@ -2081,7 +2081,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "answer-form",
@@ -23072,7 +23071,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.ad-search-div[data-v-087c794c]{\r\n    position: relative;\r\n    right: 100%;\n}\r\n", ""]);
+exports.push([module.i, "\n.ad-search-div[data-v-087c794c]{\r\n    position: relative;\r\n    right: 100%;\r\n    top: 11px;\n}\r\n", ""]);
 
 // exports
 
@@ -77092,9 +77091,7 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _c("hr"),
-    _vm._v(" "),
-    _c("div", { staticClass: "offset-2" }, [
+    _c("div", {}, [
       _c("i", [
         _vm._v(" Answer Status: "),
         _c("b", { staticClass: "badge badge-info" }, [
@@ -77129,7 +77126,7 @@ var render = function() {
       _vm._v(" "),
       _vm.role == "admin"
         ? _c("span", [
-            _c("label", [_vm._v(" Change Question Status")]),
+            _c("label", [_vm._v(" Change Answer Status")]),
             _vm._v(" "),
             _c(
               "select",

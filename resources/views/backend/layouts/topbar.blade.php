@@ -1,5 +1,5 @@
 <nav class="navbar navbar-default navbar-static-top m-b-0">
-    <div class="navbar-header" style="background:  rgb(240, 52, 52);max-height:60px">
+    <div class="navbar-header" style="background: #97BC62FF;max-height:60px">
         <div class="top-left-part">
             <!-- Logo -->
             

@@ -77,14 +77,14 @@ class QuestionController extends Controller
         return redirect()->back();
     }
 
-    public function addTag(Request $request)
+    public function addTagCategory(Request $request)
     {
         $request->validate([
             'question_id' => 'required',
-            'tag' => 'required'
         ]);
         $question = Question::findOrFail($request->question_id);
         $question->tag = $request->tag;
+        $question->category_id = $request->attached_category;
         $question->save();
         return redirect()->back();
     }

@@ -37,7 +37,7 @@
             margin: 10px;
         }
         .hover-red:hover{
-            background: rgb(240, 52, 52);
+            background: #97BC62FF;
             color: white !important;
             padding: 15px;
         }

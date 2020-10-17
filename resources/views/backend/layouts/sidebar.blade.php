@@ -35,6 +35,14 @@
                 <a href="{{route('admin.category')}}" class="waves-effect"><i class="fa fa-columns fa-fw"
                         aria-hidden="true"></i>Category</a>
             </li>
+            <li class="hover-red">
+                <a href="{{route('admin.media')}}" class="waves-effect"><i class="fa fa-columns fa-fw"
+                        aria-hidden="true"></i>Media</a>
+            </li>
+            <li class="hover-red">
+                <a href="{{route('admin.category')}}" class="waves-effect"><i class="fa fa-columns fa-fw"
+                        aria-hidden="true"></i>Email</a>
+            </li>
             @endrole
             @role('root')
             <li> <a>Admins </a></li>

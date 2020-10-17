@@ -60,7 +60,7 @@ Route::prefix('admin')->namespace('Admin')->group(function () {
         Route::get('/', 'AdminController@index')->name('admin');
         Route::get('questions', 'QuestionController@getAll')->name("admin.questions");
         Route::get('question/{id}', 'QuestionController@find')->name('admin.question');
-        Route::post('add-tag', 'QuestionController@addTag')->name("question.add.tag");
+        Route::post('add-tag', 'QuestionController@addTagCategory')->name("question.add.tag_category");
         Route::get('answered-questions', 'QuestionController@answeredQuestions')->name('admin.answered.questions');
         Route::get('all-questions', 'QuestionController@allQuestions')->name('admin.all.questions');
         Route::get('answer-question/{id}', 'QuestionController@answer')->name('admin.question.answer');
@@ -73,6 +73,9 @@ Route::prefix('admin')->namespace('Admin')->group(function () {
         Route::get('add-book', 'BookController@createForm');
         Route::post('add-book', 'BookController@save')->name('admin.book.create.save');
         Route::get('category', 'CategoryController@getAll')->name('admin.category');
+        Route::get('get-media', 'MediaController@getMedia')->name('admin.media');
+        Route::get('add-media', 'MediaController@add')->name('admin.add.media');
+        Route::post('store-media', 'MediaController@store')->name('admin.media.store');
     });
     Route::middleware(['auth', 'role:admin'])->group(function(){
         Route::get('change-question0-status/{id}/{status}', 'QuestionController@changeStatus')->name('question.change.status');
@@ -100,6 +103,8 @@ Route::prefix('admin/api')->namespace('Admin')->group(function(){
         Route::get('article-status-change/{id}/{status}', 'ArticleController@changeStatus');
         Route::get('change-book-status/{id}/{status}', 'BookController@changeStatus');
         Route::get('delete-category/{id}', 'CategoryController@delete');
+        Route::get('delete-media/{id}', 'MediaController@del');
+        Route::get('status-change-media/{id}/{status}', 'MediaController@changeStatus');
     });
 });
 

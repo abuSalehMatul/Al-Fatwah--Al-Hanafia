@@ -49,6 +49,7 @@
 .ad-search-div{
     position: relative;
     right: 100%;
+    top: 11px;
 }
 </style>
 
