@@ -2,22 +2,42 @@
 @section('content')
     <div class="main-section mt-5">
         <div class="container">
-            @foreach ($questions as $question) 
-            <a href="{{route('question.answer',[ $question->id])}}">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="left-text">
-                            <i class="far fa-bookmark"></i>
-                            <span>
-                                {{ $question->description }}...
-                            </span>
+            @if ($childs)
+                <div class="col-md-6" style="padding-left: 0">
+                    @foreach ($childs as $child)
+                        <div class="sub-div" onclick="selectASub({{ $child->id }},  '{{ app()->getLocale() }}')">
+                            {{ $child->name }}
+                        </div>
+                    @endforeach
+
+                </div>
+                <br>
+
+            @endif
+            @foreach ($questions as $question)
+                <a href="{{ route('question.answer', [$question->id]) }}">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="left-text">
+                                <i class="far fa-bookmark"></i>
+                                <span>
+                                    {{ $question->description }}...
+                                </span>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </a>
+                </a>
             @endforeach
             {{ $questions->links() }}
         </div>
-        
+
     </div>
+@endsection
+@section('js')
+    <script>
+        function selectASub(child, lang) {
+            window.location.href =  window.location.origin+ "/"+lang +"/category/"+child;
+        }
+
+    </script>
 @endsection

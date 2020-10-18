@@ -18,6 +18,14 @@
         .nav-link{
             color: #222222;
         }
+        .sub-div{
+            border: 1px solid #ED174B;
+    padding: 9px;
+    margin: 5px;
+    font-size: 20px;
+    font-weight: 600;
+
+        }
     </style>
 
 

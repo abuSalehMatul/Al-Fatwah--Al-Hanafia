@@ -27,7 +27,7 @@ Route::group([
   
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('/home', 'HomeController@index');
-    Route::get('/category/{id}', 'CategoryController@showByCategory');
+    Route::get('/category/{id}', 'CategoryController@showByCategory')->name('get_category_based');
     Route::get('get-question-answer/{questionId}', 'QuestionsController@getAnswerByQuestion')->name('question.answer')->middleware('count_view');
     Route::get('answer/{batchId}', 'AnswerController@findAnswer')->name('to_a_answer');
     Route::get('new-ans-list', 'AnswerController@getList')->name('new_answer_list');

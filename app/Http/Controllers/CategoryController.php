@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use App\Question;
+use App\Category;
 
 class CategoryController extends Controller
 {
@@ -26,6 +27,7 @@ class CategoryController extends Controller
     public function showByCategory($lang, $categoryId)
     {
         $questions = Question::getByCategory($categoryId);
-        return view('frontend.category')->with('questions', $questions);
+        $subs =  Category::where('parent_id', $categoryId)->get();
+        return view('frontend.category')->with('questions', $questions)->with('childs', $subs);
     }
 }
