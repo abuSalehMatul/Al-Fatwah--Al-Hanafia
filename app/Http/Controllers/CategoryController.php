@@ -13,6 +13,7 @@ class CategoryController extends Controller
     {
         $locale = Session::get('APP_LOCALE');
         return DB::table('categories')
+        ->whereNull('parent_id')
         ->select("name_".$locale.' as name', 'parent_id', 'id')
         ->get();
     }
