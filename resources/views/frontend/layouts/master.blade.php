@@ -20,10 +20,11 @@
         }
         .sub-div{
             border: 1px solid #ED174B;
-    padding: 9px;
-    margin: 5px;
-    font-size: 20px;
-    font-weight: 600;
+            padding: 9px;
+            margin: 5px;
+            font-size: 20px;
+            font-weight: 600;
+            cursor: pointer;
 
         }
     </style>

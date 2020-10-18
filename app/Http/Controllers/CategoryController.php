@@ -28,6 +28,7 @@ class CategoryController extends Controller
     {
         $questions = Question::getByCategory($categoryId);
         $subs =  Category::where('parent_id', $categoryId)->get();
-        return view('frontend.category')->with('questions', $questions)->with('childs', $subs);
+        $category = Category::findOrFail($categoryId);
+        return view('frontend.category')->with('questions', $questions)->with('childs', $subs)->with('category', $category);
     }
 }

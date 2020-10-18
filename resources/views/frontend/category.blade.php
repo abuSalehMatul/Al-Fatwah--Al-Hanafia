@@ -3,6 +3,9 @@
     <div class="main-section mt-5">
         <div class="container">
             @if ($childs)
+                <div>
+                    <h1> {{$category->name}}<i class="fas fa-arrow-alt-circle-down"></i></h1>
+                </div>
                 <div class="col-md-6" style="padding-left: 0">
                     @foreach ($childs as $child)
                         <div class="sub-div" onclick="selectASub({{ $child->id }},  '{{ app()->getLocale() }}')">
