@@ -37,7 +37,14 @@
           </div>
         </div>
       </div>
-      <category-with-short-list :app_local="'{{app()->getLocale()}}'"></category-with-short-list>
+      <div class="row">
+        <div class="col-md-12 col-sm-12"> 
+          <category-with-short-list :app_local="'{{app()->getLocale()}}'"></category-with-short-list>
+        </div> 
+        <div class="col-sm-12 col-md-6">
+        </div>
+      </div>
+     
     </div>
   </div>
   <div class="tabs_topics mb-5">

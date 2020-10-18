@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Answer;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\QuestionCreateRequest;
@@ -72,11 +73,15 @@ class QuestionsController extends Controller
         ->get();
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function toAAnswer($lang, $qId)
+    {
+        $answer = Answer::where('question_id',$qId)
+        ->where('language', $lang)
+        ->first();
+
+        return redirect()->route('to_a_answer', $answer->batch_id);
+    }
+
     public function create()
     {
         $languages = config('app_langs');

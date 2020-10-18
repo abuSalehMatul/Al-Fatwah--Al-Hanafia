@@ -1,8 +1,9 @@
 <template>
   <div>
     <ul class="nav nav-tabs">
-      <li class="nav-item" v-for="(category, index) in categories">
+      <li class="nav-item " v-for="(category, index) in categories">
         <a
+          nowrap
           class="nav-link"
           :class="{ 'active': index === 0 }"
           data-toggle="tab"

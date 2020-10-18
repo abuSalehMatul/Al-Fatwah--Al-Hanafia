@@ -34,9 +34,14 @@
                     </a>
 
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a id="logout-btn" class="dropdown-item" href="{{route('profile', auth()->id())}}" >
+                            {{ __('Profile') }}
+                        </a>
                         <a id="logout-btn" class="dropdown-item" href="#" onclick="logout();">
                             {{ __('Logout') }}
                         </a>
+
+                       
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf

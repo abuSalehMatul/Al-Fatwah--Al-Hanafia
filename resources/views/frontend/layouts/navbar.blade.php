@@ -18,7 +18,7 @@
                         <a class="nav-link" href="{{route('all_article')}}">{{__('Articles')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">{{__('About')}}</a>
+                        <a class="nav-link" href="{{route('about.us')}}">{{__('About')}}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">{{__('Terms')}}</a>

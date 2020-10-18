@@ -32,6 +32,8 @@ class MediaController extends Controller
         return redirect()->back();
     }
 
+    
+
     public function store(Request $request)
     {
         $request->validate([

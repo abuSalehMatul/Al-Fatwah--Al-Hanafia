@@ -24,6 +24,7 @@ Route::group([
     //
     Auth::routes();
 
+  
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('/home', 'HomeController@index');
     Route::get('/category/{id}', 'CategoryController@showByCategory');
@@ -34,9 +35,12 @@ Route::group([
     Route::get('selected-question', 'QuestionsController@selectedQuestions')->name('selected.answer');
     Route::get('article/{id}', 'ArticleController@show')->name('article');
     Route::get('articles', 'ArticleController@getAll')->name('all_article');
+    Route::get('all-media', 'HomeController@getAllMediaView');
+    Route::get('about-us', 'HomeController@aboutUs')->name('about.us');
+    Route::get('go-to-answer/{id}', 'QuestionsController@toAAnswer')->name('go.to.ans');
 
     Route::group(['middleware' => 'auth'], function () {
-        //
+        Route::get('profile/{id}', 'HomeController@getProfile')->name('profile');
         Route::resource('questions', 'QuestionsController');
     });
 
@@ -52,6 +56,7 @@ Route::group(['prefix' => 'api'], function () {
     Route::get('get-articles', 'ArticleController@getShortList');
     Route::get('get-books', 'BookController@getBooks');
     Route::get('get-search', 'QuestionsController@search');
+    Route::get('get-media-show/{lang}', 'HomeController@getMediaActives');
    
 });
 
