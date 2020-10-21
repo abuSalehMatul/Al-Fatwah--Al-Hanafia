@@ -7,7 +7,7 @@
                 <h3>Admins </h3>
                   
                 @foreach($admins as $admin)
-                    <form method="POST" action="{{route('admin.edit')}}"> 
+                    <form method="POST" class="col-md-12" action="{{route('admin.edit')}}"> 
                         @csrf
                         <div class="col-md-1 form-group"> 
                             <input type="text" value="{{$admin->name}}" name="name" class="form-control">
@@ -41,7 +41,7 @@
             <h3>Sub Admins </h3>
               
             @foreach($subAdmins as $admin)
-                <form method="POST" action="{{route('admin.edit')}}"> 
+                <form method="POST" class="col-md-12" action="{{route('admin.edit')}}"> 
                     @csrf
                     <div class="col-md-1 form-group"> 
                         <input type="text" value="{{$admin->name}}" name="name" class="form-control">
