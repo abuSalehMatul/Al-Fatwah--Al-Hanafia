@@ -13,7 +13,7 @@
                         <h5>Category Name English </h5>
                         <input type="text" name="name_en" placeholder="Name English" class="form-control">
                         <h5>Category Name Arbi </h5>
-                        <input type="text" name="name_ar" placeholder="Name English" class="form-control">
+                        <input type="text" name="name_ar" placeholder="Name Arabic" class="form-control">
                     </div>
                     
                     <div class="col-md-6 col-sm-6 white-box form-group" >
