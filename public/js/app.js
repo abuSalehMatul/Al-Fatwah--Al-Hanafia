@@ -39762,105 +39762,97 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("div", { staticClass: "row" }, [
-        _c(
-          "div",
-          { staticClass: "row mt-5 col-md-6" },
-          _vm._l(_vm.categories, function(category) {
-            return _c("div", { staticClass: "col-md-3" }, [
-              _c(
-                "a",
-                {
-                  staticClass: "col-md-12",
-                  attrs: { href: _vm.getCategoryHref(category.id) }
-                },
-                [
-                  _c("div", [
-                    _c("h4", { staticClass: "box" }, [
-                      _vm._v(_vm._s(category.name))
-                    ])
-                  ])
-                ]
-              )
-            ])
-          }),
-          0
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "col-md-6", staticStyle: { "margin-top": "4%" } },
-          [
-            _vm._l(_vm.medias, function(media, index) {
-              return index < 10
-                ? _c(
-                    "a",
-                    { staticClass: "col-md-12", attrs: { href: media.url } },
-                    [
-                      _c("div", { staticClass: "row" }, [
-                        _c("div", { staticClass: "col-md-5" }, [
-                          _c(
-                            "video",
-                            {
-                              attrs: {
-                                width: "100%",
-                                height: "55",
-                                poster: "placeholder.png",
-                                controls: ""
-                              }
-                            },
-                            [
-                              _c("source", {
-                                attrs: { src: media.url, type: "video/mp4" }
-                              })
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-md-7" }, [
-                          _c(
-                            "h5",
-                            {
-                              staticStyle: {
-                                "text-align": "left",
-                                color: "black"
-                              }
-                            },
-                            [_vm._v(_vm._s(media.title))]
-                          )
-                        ])
-                      ])
-                    ]
-                  )
-                : _vm._e()
-            }),
-            _vm._v(" "),
+  return _c("div", [
+    _c("div", { staticClass: "row" }, [
+      _c(
+        "div",
+        { staticClass: "row mt-5 col-md-6" },
+        _vm._l(_vm.categories, function(category) {
+          return _c("div", { staticClass: "col-md-3" }, [
             _c(
               "a",
               {
-                staticStyle: {
-                  float: "right",
-                  color: "#ed174b",
-                  "font-weight": "600"
-                },
-                attrs: { href: _vm.getAllMediaLink() }
+                staticClass: "col-md-12",
+                attrs: { href: _vm.getCategoryHref(category.id) }
               },
-              [_vm._v(_vm._s(_vm.see))]
+              [
+                _c("div", [
+                  _c("h4", { staticClass: "box" }, [
+                    _vm._v(_vm._s(category.name))
+                  ])
+                ])
+              ]
             )
-          ],
-          2
-        )
-      ]),
+          ])
+        }),
+        0
+      ),
       _vm._v(" "),
-      _c("category-questions", {
-        attrs: { categories: _vm.categories, app_local: _vm.app_local }
-      })
-    ],
-    1
-  )
+      _c(
+        "div",
+        { staticClass: "col-md-6", staticStyle: { "margin-top": "4%" } },
+        [
+          _vm._l(_vm.medias, function(media, index) {
+            return index < 10
+              ? _c(
+                  "a",
+                  { staticClass: "col-md-12", attrs: { href: media.url } },
+                  [
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-md-5" }, [
+                        _c(
+                          "video",
+                          {
+                            attrs: {
+                              width: "100%",
+                              height: "55",
+                              poster: "placeholder.png",
+                              controls: ""
+                            }
+                          },
+                          [
+                            _c("source", {
+                              attrs: { src: media.url, type: "video/mp4" }
+                            })
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-7" }, [
+                        _c(
+                          "h5",
+                          {
+                            staticStyle: {
+                              "text-align": "left",
+                              color: "black"
+                            }
+                          },
+                          [_vm._v(_vm._s(media.title))]
+                        )
+                      ])
+                    ])
+                  ]
+                )
+              : _vm._e()
+          }),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              staticStyle: {
+                float: "right",
+                color: "#ed174b",
+                "font-weight": "600"
+              },
+              attrs: { href: _vm.getAllMediaLink() }
+            },
+            [_vm._v(_vm._s(_vm.see))]
+          )
+        ],
+        2
+      )
+    ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true

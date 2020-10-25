@@ -26,7 +26,7 @@
         <a :href="getAllMediaLink()" style="float: right; color: #ed174b; font-weight: 600;">{{see}}</a>
       </div>
     </div>
-    <category-questions :categories="categories" :app_local="app_local"></category-questions>
+    <!-- <category-questions :categories="categories" :app_local="app_local"></category-questions> -->
   </div>
 </template>
 
