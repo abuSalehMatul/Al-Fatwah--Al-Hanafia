@@ -10,7 +10,7 @@
               <i class="fas fa-feather-alt"></i> {{__('New_Answers')}}
             </h4>
             <new-answer></new-answer>
-            <a href="{{route('new_answer_list')}}" style="float: right; color: #ed174b; font-weight: 600;">{{__('See_More')}}....</a>
+            <a href="{{route('new_answer_list')}}" class="see-more" style="">{{__('See_More')}}....</a>
           </div>
         </div>
         <div class="col-md-4 mb-4">
@@ -19,7 +19,7 @@
               {{__('Selected_Questions')}}
             </h4>
             <selected-question></selected-question>
-            <a href="{{route('selected.answer')}}" style="float: right; color: #ed174b; font-weight: 600;">{{__('See_More')}}....</a>
+            <a href="{{route('selected.answer')}}" class="see-more">{{__('See_More')}}....</a>
           </div>
         </div>
       </div>

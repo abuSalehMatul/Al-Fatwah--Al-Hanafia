@@ -15,7 +15,7 @@
                             <th> Link </th>
 
                             @role('admin')
-                            <th>Status</th>
+                            <th>Change Status</th>
                             <th></th>
                             @endrole
                         </thead>
@@ -27,14 +27,13 @@
                             @role('admin')
                             <td>
                                 <select class="form-control" onchange="changeStatusMedia(this, {{$media->id}})">
-                                    <option value=""><option>
                                     <option value="active"> Active </option>
                                     <option value="pending"> Pending </option>
                                     <option value="deactive"> Deactive </option>
                                 </select>
                             </td>
                             <td>
-                                <button onclick="confirmation({{$media->id}})" class="btn btn-sm btn-danger">Delete </button>
+                                <button onclick="confirmation({{$media->id}})" class="btn btn-danger">Delete </button>
                             </td>
                             @endrole
                             </tr>

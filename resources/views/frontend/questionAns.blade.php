@@ -22,8 +22,9 @@
             </div>
             <hr>
             <br>
+            <h5> {{ __('Answer') }}</h5>
             <div class="card">
-                <div class="card-body " style="background: #c3f4c1">
+                <div class="card-body answer-background">
                     <div class="left-text">
                         <i class="fas fa-arrow-right"></i>
                         <span>

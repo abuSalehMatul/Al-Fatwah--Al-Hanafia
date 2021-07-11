@@ -38,9 +38,9 @@ class MediaController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'video' => "required|file"
+            'media' => "required|file"
         ]);
-        $path = $request->file('video')->store('public');
+        $path = $request->file('media')->store('public');
         $url = Storage::url($path);
         $media = new Media();
         $media->title = $request->title;

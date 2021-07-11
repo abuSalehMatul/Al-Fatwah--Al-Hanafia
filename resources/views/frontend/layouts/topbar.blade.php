@@ -3,8 +3,9 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" target="_blank"  href="{{config('app.facebook_link')}}"><i class="fab fa-facebook color1"></i></a>
-                    <a class="nav-link" target="_blank" href="{{config('app.youtube_link')}}"><i class="fab fa-youtube color5"></i></a>
+                    {{-- <a class="nav-link" target="_blank"  href="{{config('app.facebook_link')}}"><i class="fab fa-facebook color1"></i></a>
+                    <a class="nav-link" target="_blank" href="{{config('app.youtube_link')}}"><i class="fab fa-youtube color5"></i></a> --}}
+                    <a class="navbar-brand text-center" style="font-size: 29px;line-height: 46px;font-weight: bolder;" href="{{route('home')}}">{{__('Site_Name')}}<br /></a>
                 </li>
             </ul>
             <li class="nav-item dropdown">
@@ -15,7 +16,6 @@
                     @foreach(config('app_langs') as $key => $lang)
                     <a class="dropdown-item" href="{{url('/').'/'. $key}}">{{$lang}}</a>
                     @endforeach
-                    <div class="dropdown-divider"></div>
                 </div>
             </li>
             @guest

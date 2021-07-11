@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Arizonia|Poppins:100,100i,200,200i,300,300i,400,500,500i,600,600i,700&display=swap");
 
 * {
   margin: 0;
@@ -14,24 +13,24 @@ li.nav-item.dropdown {
 }
 
 .dropdown-menu.show {
-  border-top: 3px solid #ed174b;
+  border-top: 3px solid #BDDE98;
 }
 
 .modal-header {
-  background: #ed174b;
+  background: #BDDE98;
   color: #fff;
 }
 
 .btn.btn-primary {
-  background-color: #ed174b !important;
+  background-color: #BDDE98 !important;
   color: #fff;
-  border: 1px solid #ed174b;
+  border: 1px solid #BDDE98;
 }
 
 .btn.btn-secondary {
-  border: 1px solid #ed174b;
+  border: 1px solid #BDDE98;
   background-color: #fff !important;
-  color: #ed174b;
+  color: #BDDE98;
 }
 
 li.nav-item {
@@ -75,7 +74,7 @@ i.fas.fa-globe-americas {
 }
 
 .main-menu .bg-light {
-  background-color: #ed174b !important;
+  background-color: #BDDE98 !important;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -89,21 +88,22 @@ i.fas.fa-globe-americas {
 }
 
 .navbar-light .navbar-brand {
-  font-family: fantasy;
-  color: #fff !important;
+   color: #BDDE98;
 }
 
 .new_answer {
   padding: 40px 15px;
   box-shadow: 1px 1px 8px #999;
-  border-top: 2px solid #ed174b;
+  border-top: 2px solid #BDDE98;
   height: 100%;
 }
-
+.see-more{
+  float: right; color: #BDDE98; font-weight: 600;
+}
 .selected_answer {
   padding: 30px 15px;
   box-shadow: 1px 1px 8px #999;
-  border-bottom: 2px solid #ed174b;
+  border-bottom: 2px solid #BDDE98;
   height: 100%;
 }
 
@@ -126,14 +126,15 @@ a {
 }
 
 .card:hover {
-  background-color: #ed174b !important;
   transition: all 0.5s linear;
 }
 
 .card:hover .left-text {
-  color: #fff;
+   font-weight: 600;
 }
-
+.answer-background{
+  background-color: rgb(251 250 250);
+}
 a {
   color: bisque;
   font-weight: 600;
@@ -177,7 +178,6 @@ a {
 }
 
 .section_heading span {
-  font-family: "Arizonia", cursive;
   color: #7a7992;
   font-size: 28px;
   line-height: 30px;
@@ -270,7 +270,7 @@ a {
   background: #fff;
   min-height: 300px;
   height: 100%;
-  border-top: 2px solid #ed174b;
+  border-top: 2px solid #BDDE98;
   border: 1px solid #ddd;
   border-radius: 5px;
 }
@@ -291,13 +291,13 @@ a {
 
 .nav-tabs .nav-link.active {
   color: #fff;
-  background-color: #ed174b;
-  border: 1px solid #ed174b;
+  background-color: #BDDE98;
+  border: 1px solid #BDDE98;
   padding: 8px 55px;
 }
 
 .nav-tabs .nav-link {
-  color: #ed174b;
+  color: #BDDE98;
   background-color: #fff;
   padding: 8px 55px;
 }
@@ -311,15 +311,15 @@ a {
 
 .nav-tabs .nav-link:hover {
   color: #fff;
-  background-color: #ed174b;
-  border: 1px solid #ed174b;
+  background-color: #BDDE98;
+  border: 1px solid #BDDE98;
   transition: all 0.5s linear;
 }
 
 .article_section .tab-content {
   background: #fff;
   border-radius: 5px;
-  border-top: 2px solid #ed174b;
+  border-top: 2px solid #BDDE98;
   box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.1);
 }
 
@@ -339,26 +339,26 @@ a {
 a.btn.btn-read {
   margin-right: 5px;
   box-shadow: 2px 0px 8px 0px rgba(0, 0, 0, 0.18);
-  color: #ed174b;
+  color: #BDDE98;
   transition: 0.5s;
   background-color: #fff;
 }
 
 a.btn.btn-read:hover {
-  background-color: #ed174b;
+  background-color: #BDDE98;
   color: #fff;
   transition: 0.5s;
 }
 
 a.btn.btn-article {
-  background-color: #ed174b;
+  background-color: #BDDE98;
   color: #fff;
   transition: 0.5s;
 }
 
 a.btn.btn-article:hover {
-  border: 1px solid #ed174b;
-  color: #ed174b;
+  border: 1px solid #BDDE98;
+  color: #BDDE98;
   transition: 0.5s;
   background-color: #fff;
 }
@@ -387,7 +387,7 @@ a.btn.btn-article:hover {
 /* ============== Dropdown Search ===================*/
 .openBtn {
   background: transparent;
-  border: 1px solid #ed174b !important;
+  border: 1px solid #BDDE98 !important;
   cursor: pointer;
   color: #fff;
   box-shadow: none;
@@ -451,7 +451,7 @@ a.btn.btn-article:hover {
   float: left;
   width: 10%;
   padding: 5px;
-  background: #ed174b;
+  background: #BDDE98;
   font-size: 15px;
   border: none;
   cursor: pointer;
@@ -461,7 +461,7 @@ a.btn.btn-article:hover {
 
 .overlay button:hover {
   background: #fff;
-  color: #ed174b;
+  color: #BDDE98;
   transition: 0.5s;
 }
 

@@ -19,11 +19,10 @@ class SetLocale
 
     public function handle($request, Closure $next)
     {
-        // $this->url->defaults([
-        //     'locale' => ,
-        // ]);
-        $APP_LOCALE = $request->segment(1) ?? config('app.locale');
-
+        $defaultLocale = Session::get("APP_LOCALE")??config('app.locale');
+       
+        $APP_LOCALE = $request->segment(1) ?? $defaultLocale;
+       
         app()->setLocale($APP_LOCALE);
 
         $this->url->defaults(['locale' => $APP_LOCALE]);
@@ -31,7 +30,7 @@ class SetLocale
         
         view()->share('APP_LOCALE', $APP_LOCALE);
         Session::put('APP_LOCALE', $APP_LOCALE);
-
+       // dd(Session::get("APP_LOCALE"));
         return $next($request);
     }
 }

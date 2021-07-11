@@ -4,7 +4,7 @@
             <!-- Logo -->
             
             <a class="logo" href="{{url('/')}}">
-               <b style="color: black;--font-family-monospace: rgb(17, 2, 85);font-weight: 600;"> Alfatawa-alhanafia</b>
+               <b style="color: black;font-weight: 600;"> Alfatawa-alhanafia</b>
             </a>
         </div>
         <!-- /Logo -->

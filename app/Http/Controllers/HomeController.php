@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Media;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class HomeController extends Controller
 {
@@ -14,7 +15,8 @@ class HomeController extends Controller
 
   public function redirectToHome()
   {
-    return redirect()->route('home', ['locale' => config('app.locale')]);
+    $defaultLocale = Session::get("APP_LOCALE")??config('app.locale');
+    return redirect()->route('home', ['locale' => $defaultLocale]);
   }
 
   public function getAllMediaView($lang)

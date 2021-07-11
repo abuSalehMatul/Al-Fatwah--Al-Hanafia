@@ -17,7 +17,8 @@ class AnswerController extends Controller
 
     public function getList($lang)
     {
-        $answers = Answer::where('status', 'active')->where('language', $lang)->orderBy('created_at', 'DESC')->paginate(15);
+        $locale = Session::get('APP_LOCALE');
+        $answers = Answer::where('status', 'active')->where('language', $locale)->orderBy('created_at', 'DESC')->paginate(15);
         return view('frontend.answer_list')->with('answers', $answers);
     }
 

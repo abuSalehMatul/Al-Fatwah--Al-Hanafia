@@ -38,7 +38,7 @@
         }
 
         .hover-red a:hover {
-            color: rgb(4, 5, 87) !important;
+            color: #03136D !important;
             background: none !important;
         }
 
@@ -52,14 +52,14 @@
 
         .custom-badge {
             background: #f7f5f5;
-            color: #565655 !important;
+            color: #03136D !important;
         }
 
         .badge-info {
-            background-color: #044167;
+            background-color: #03136D;
         }
         .btn-success {
-            background: #044167 !important;
+            background: #03136D !important;
         }
 
     </style>
