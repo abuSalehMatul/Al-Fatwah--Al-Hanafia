@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="col-md-12">
+    <div class="col-md-12 p-0">
        <by-answer-report></by-answer-report>
        <answer-statistics> </answer-statistics>
     </div>

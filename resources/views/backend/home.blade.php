@@ -2,41 +2,41 @@
 @section('content')
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-2 col-sm-2 col-3">
             <div class="white-box">
-                <h3 class="box-title">Total Answers</h3>
-                <h2> {{$data['total_answered']}} </h2>
+                <h6 class="box-title">Total Active Answers</h6>
+                <h6> {{$data['total_answered']}} </h6>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-2 col-sm-2 col-3">
             <div class="white-box">
-                <h3 class="box-title">Total Questions</h3>
-                <h2> {{$data['total_question']}} </h2>
+                <h6 class="box-title">Total Active Questions</h6>
+                <h6> {{$data['total_question']}} </h6>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-2 col-sm-2 col-3">
             <div class="white-box">
-                <h3 class="box-title">Categories</h3>
-                <h2> {{$data['total_category']}} </h2>
+                <h6 class="box-title">Categories</h6>
+                <h6> {{$data['total_category']}} </h6>
             </div>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-2 col-sm-2 col-3">
             <div class="white-box">
-                <h3 class="box-title">Total Users</h3>
-                <h2> {{$data['total_user']}} </h2>
+                <h6 class="box-title">Total Users</h6>
+                <h6> {{$data['total_user']}} </h6>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-2 col-sm-2 col-3">
             <div class="white-box">
-                <h3 class="box-title">Total Books</h3>
-                <h2> {{$data['total_book']}} </h2>
+                <h6 class="box-title">Total Books</h6>
+                <h6> {{$data['total_book']}} </h6>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-2 col-sm-2 col-3">
             <div class="white-box">
-                <h3 class="box-title">Published Articles</h3>
-                <h2> {{$data['publish_article']}} </h2>
+                <h6 class="box-title">Published Articles</h6>
+                <h6> {{$data['publish_article']}} </h6>
             </div>
         </div>
     </div>

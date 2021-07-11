@@ -24,9 +24,9 @@ class AdminController extends Controller
     {
         $data = [
             'total_answered' => Answer::where('status', 'active')->count(),
-            'total_question' => Question::count(),
+            'total_question' => Question::where('status', 'active')->count(),
             'total_category' => Category::count(),
-            'total_user' => User::count(),
+            'total_user' => User::where('status', 'active')->count(),
             'publish_article' => Article::where('status', 'active')->count(),
             'total_book' => Book::count()
         ];

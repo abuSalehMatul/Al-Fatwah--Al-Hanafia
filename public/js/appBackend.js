@@ -76850,7 +76850,7 @@ var render = function() {
   return _c("div", [
     _c(
       "div",
-      { staticClass: "col-md-12" },
+      { staticClass: "col-md-12 p-0" },
       [_c("by-answer-report"), _vm._v(" "), _c("answer-statistics")],
       1
     )
@@ -76988,7 +76988,7 @@ var render = function() {
     _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "card-title" }, [
         _c("h3", [
-          _c("i", { staticClass: "badge" }, [
+          _c("i", { staticClass: "badge badge-info" }, [
             _vm._v("id: " + _vm._s(_vm.questionAns.id))
           ]),
           _vm._v(" "),
@@ -77009,10 +77009,10 @@ var render = function() {
     _vm._v(" "),
     _c("br"),
     _vm._v(" "),
-    _c("h3", [_vm._v("Get Answer On language")]),
+    _c("h3", [_vm._v("Choose language to give answer")]),
     _vm._v(" "),
     _c("div", { staticClass: "row offset-1" }, [
-      _c("label", { staticStyle: { margin: "15px", cursor: "pointer" } }, [
+      _c("label", { staticStyle: { margin: "10px", cursor: "pointer" } }, [
         _c("input", {
           directives: [
             {
@@ -77038,7 +77038,7 @@ var render = function() {
         _vm._v("English\n    ")
       ]),
       _vm._v(" "),
-      _c("label", { staticStyle: { margin: "15px", cursor: "pointer" } }, [
+      _c("label", { staticStyle: { margin: "10px", cursor: "pointer" } }, [
         _c("input", {
           directives: [
             {
@@ -77064,7 +77064,7 @@ var render = function() {
         _vm._v("Bangla\n    ")
       ]),
       _vm._v(" "),
-      _c("label", { staticStyle: { margin: "15px", cursor: "pointer" } }, [
+      _c("label", { staticStyle: { margin: "10px", cursor: "pointer" } }, [
         _c("input", {
           directives: [
             {
@@ -77333,7 +77333,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "col-md-6" }, [
+    _c("div", { staticClass: "col-md-4 col-sm-4 p-0" }, [
       _c("h4", [_vm._v("Answer Statistics Chart")]),
       _vm._v(" "),
       _c("input", {
@@ -77558,7 +77558,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", [
       _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-6 col-sm-5" }, [
+        _c("div", { staticClass: "col-md-4 col-sm-4 p-0" }, [
           _c("h4", { staticClass: "text-center" }, [
             _vm._v("Questions By Answered")
           ]),
@@ -77568,7 +77568,7 @@ var staticRenderFns = [
           })
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-md-6 col-sm-5" }, [
+        _c("div", { staticClass: "col-md-4 col-sm-4 p-0" }, [
           _c("h4", { staticClass: "text-center" }, [
             _vm._v("Questions By Status")
           ]),

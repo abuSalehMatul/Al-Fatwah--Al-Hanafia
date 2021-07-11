@@ -14,36 +14,55 @@
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <!-- Bootstrap Core CSS -->
-    <link href="{{asset('admin_asset/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('admin_asset/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Menu CSS -->
-    <link href="{{asset('admin_asset/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('admin_asset/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css') }}"
+        rel="stylesheet">
     <!-- animation CSS -->
-    <link href="{{asset('admin_asset/css/animate.css')}}" rel="stylesheet">
+    <link href="{{ asset('admin_asset/css/animate.css') }}" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="{{asset('admin_asset/css/style.css')}}" rel="stylesheet">
+    <link href="{{ asset('admin_asset/css/style.css') }}" rel="stylesheet">
     <!-- color CSS -->
-    <link href="{{asset('admin_asset/css/colors/default.css')}}" id="theme" rel="stylesheet">
+    <link href="{{ asset('admin_asset/css/colors/default.css') }}" id="theme" rel="stylesheet">
     @yield('css')
-   
-        <style> 
-        .space-position{
+
+    <style>
+        .space-position {
             position: relative;
             top: 20px;
             margin: 10px;
         }
-        .hover-red:hover{
-            background: #97BC62FF;
-            color: white !important;
-            padding: 15px;
-            font-weight: 700;
+
+        .hover-red:hover {
+            font-weight: 600;
         }
-        .container-fluid{
+
+        .hover-red a:hover {
+            color: rgb(4, 5, 87) !important;
+            background: none !important;
+        }
+
+        #side-menu>li>a {
+            padding: 0px;
+        }
+
+        .container-fluid {
             background: white !important;
         }
-        .custom-badge{
-            background: gainsboro;color:black
+
+        .custom-badge {
+            background: #f7f5f5;
+            color: #565655 !important;
         }
-        </style>
+
+        .badge-info {
+            background-color: #044167;
+        }
+        .btn-success {
+            background: #044167 !important;
+        }
+
+    </style>
 </head>
 
 <body class="fix-header">
@@ -55,26 +74,27 @@
     <div id="app_backend">
         <div id="wrapper">
             @include('backend.layouts.topbar')
-           
+
             @include('backend.layouts.sidebar')
-           
+
             <div id="page-wrapper">
                 @yield('content')
                 <!-- /.container-fluid -->
-                <footer class="footer text-center"> Developed By SJOpt . All rights Reserved By Alfatawa-alhanafia</footer>
+                <footer class="footer text-center"> Developed By SJOpt . All rights Reserved By Alfatawa-alhanafia
+                </footer>
             </div>
             <!-- ============================================================== -->
             <!-- End Page Content -->
             <!-- ============================================================== -->
         </div>
     </div>
-    
+
     <!-- /#wrapper -->
     <script src="{{ asset('js/appBackend.js') }}"></script>
-  
-    <script src="{{asset('admin_asset/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js')}}"></script>
-    
-    <script src="{{asset('admin_asset/js/custom.min.js')}}"></script>
+
+    <script src="{{ asset('admin_asset/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js') }}"></script>
+
+    <script src="{{ asset('admin_asset/js/custom.min.js') }}"></script>
     @yield('js')
 </body>
 

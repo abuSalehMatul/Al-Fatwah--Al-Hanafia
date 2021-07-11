@@ -30,12 +30,12 @@
                             <td> <i class="badge {{ $question->status == 1 ? 'badge-info' : 'badge-danger' }}">Is Answered:
                                     {{ $question->is_answered == 0 ? 'No' : 'Yes' }} </i> </td>
                             <td> <i class="badge badge-sm custom-badge" style="">{{ $question->tag }} </i></td>
-                            <td> <i class="badge badge-secondary badge-sm custom-badge" style=""> Category:
+                            <td> <i class="badge  badge-sm custom-badge" style=""> Category:
                                     {{ optional($question->category)->name_en }} </i>
                             </td>
-                            <td> <i class="badge badge-success badge-sm custom-badge" style=""> Views:
+                            <td> <i class="badge badge-sm custom-badge" style=""> Views:
                                     {{ $question->view_count }} </i></td>
-                            <td> <i class="badge badge-sm badge-success custom-badge" style=""> Asked at:
+                            <td> <i class="badge badge-sm custom-badge" style=""> Asked at:
                                     {{ $question->created_at->format('d-m-y h:i:s') }} </i></td>
                             <td></td>
                         </tr>
@@ -87,7 +87,7 @@
                 </div>
             </div>
             <br>
-            <div style="position: relative;left:85%;">
+            <div class="col-md-12">
                 <a href="{{ route('admin.question.answer', $question->id) }}" class="text-blue col-md-4 col-sm-12">Answer
                     this question</a>
             </div>

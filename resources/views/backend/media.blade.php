@@ -5,7 +5,7 @@
             <div class="col-md-12">
                 <div class="white-box">
                     @role('admin')
-                    <a class=" btn-sm btn-success" href="{{ route('admin.add.media') }}"> Add Media </a>
+                    <a class=" btn btn-success" href="{{ route('admin.add.media') }}"> Add Media </a>
                     @endrole
                     <table class="table table-borderless">
                         <thead>

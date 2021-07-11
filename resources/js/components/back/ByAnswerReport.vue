@@ -1,12 +1,12 @@
 <template>
   <div>
     <div class="row">
-      <div class="col-md-6 col-sm-5">
+      <div class="col-md-4 col-sm-4 p-0">
         <h4 class="text-center">Questions By Answered</h4>
         <canvas id="question_report_by_answered" height="250"></canvas>
       </div>
 
-      <div class="col-md-6 col-sm-5">
+      <div class="col-md-4 col-sm-4 p-0">
         <h4 class="text-center">Questions By Status</h4>
         <canvas id="question_report_status" height="250"></canvas>
       </div>

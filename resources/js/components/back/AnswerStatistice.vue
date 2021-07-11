@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="col-md-6">
+    <div class="col-md-4 col-sm-4 p-0">
       <h4>Answer Statistics Chart</h4>
       <input type="date" v-model="dateRange.fromDate" @change="dateFilter" />
       To

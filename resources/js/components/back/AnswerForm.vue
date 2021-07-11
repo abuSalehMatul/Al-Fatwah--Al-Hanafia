@@ -3,7 +3,7 @@
     <div class="row">
       <div class="card-title">
         <h3>
-          <i class="badge">id: {{questionAns.id}}</i>
+          <i class="badge badge-info">id: {{questionAns.id}}</i>
           <b>{{questionAns.title}}</b>
           <i class="">(Question Status:{{questionAns.status}})</i>
         </h3>
@@ -12,15 +12,15 @@
     </div>
     <hr />
     <br />
-    <h3>Get Answer On language</h3>
+    <h3>Choose language to give answer</h3>
     <div class="row offset-1">
-      <label style="margin:15px;cursor:pointer">
+      <label style="margin:10px;cursor:pointer">
         <input type="radio" value="en" v-model="lang" @change="getAnswer()" />English
       </label>
-      <label style="margin:15px;cursor:pointer">
+      <label style="margin:10px;cursor:pointer">
         <input type="radio" value="bn" v-model="lang" @change="getAnswer()" />Bangla
       </label>
-      <label style="margin:15px;cursor:pointer">
+      <label style="margin:10px;cursor:pointer">
         <input type="radio" value="ar" v-model="lang" @change="getAnswer()" />Arabic
       </label>
     </div>

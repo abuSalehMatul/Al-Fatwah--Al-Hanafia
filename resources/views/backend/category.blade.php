@@ -4,7 +4,7 @@
     <div class="row space-position">
         <div class="col-md-12">
             <div class="white-box">
-                <a class=" btn-sm btn-success" href="{{route('admin.add.category')}}"> Add Category </a>
+                <a class=" btn btn-success" href="{{route('admin.add.category')}}"> Add Category </a>
                 @php
                     $categories = App\Category::get();
                 @endphp
